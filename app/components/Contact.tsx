@@ -13,8 +13,8 @@ export default function Contact() {
               </span>
             </h2>
             <p className="mt-7 text-lg/8 text-gray-600 text-balance">
-              Розкажіть про ваш об'єкт — ми оцінимо можливість його реалізації
-              та надамо технічну консультацію.
+              Розкажіть про ваш проєкт — ми швидко оцінимо доцільність рішення
+              та підкажемо оптимальну конфігурацію.
             </p>
           </div>
           <div className="bg-[#eceffa] p-8 max-w-80 lg:mt-40 lg:block hidden">
@@ -176,7 +176,7 @@ export default function Contact() {
           <div className="mt-5">
             <button
               type="submit"
-              className="block w-full  bg-[#2c5cf2] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-[#2c5cf2] focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-[#2c5cf2]"
+              className="block w-full  bg-[#2c5cf2] px-4 py-3 text-center  font-semibold text-white shadow-sm hover:bg-[#2c5cf2] focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-[#2c5cf2] text-2xl tracking-tight "
             >
               Отримати консультацію
             </button>
