@@ -3,7 +3,7 @@ const faqs = [
     id: 1,
     question: "Чим iProk відрізняється від каркасного будинку?",
     answer:
-      "Це система, де каркас, утеплення й обшивка працюють як єдиний механізм, а виробництво максимально перенесене в цех..",
+      "Це система, де каркас, утеплення й обшивка працюють як єдиний механізм, а виробництво максимально перенесене в цех.",
   },
   {
     id: 2,
@@ -33,18 +33,18 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <div className="bg-white">
-      <div className="mx-auto max-w-7xl px-6 py-24  lg:px-8 lg:py-40">
-        <h2 className="text-4xl font-bold tracking-tight text-[#2c5cf2] sm:text-5xl">
+    <div className="bg-[#eceffa] ">
+      <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20 lg:px-8">
+        <h2 className=" text-pretty text-4xl font-bold tracking-tight text-[#2c5cf2] sm:text-5xl">
           Поширені запитання
         </h2>
         <dl className="mt-20 divide-y divide-gray-900/10">
           {faqs.map((faq) => (
             <div
               key={faq.id}
-              className="py-8 first:pt-0 last:pb-0 lg:grid lg:grid-cols-12 lg:gap-8"
+              className="py-6 first:pt-0 last:pb-0 lg:grid lg:grid-cols-12 lg:gap-4"
             >
-              <dt className="text-base/7 font-semibold text-gray-900 lg:col-span-5">
+              <dt className="text-xl font-semibold text-gray-900 lg:col-span-5">
                 {faq.question}
               </dt>
               <dd className="mt-4 lg:col-span-7 lg:mt-0">

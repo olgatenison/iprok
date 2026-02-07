@@ -14,9 +14,9 @@ export default function Hero() {
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
-          <p className="md:mt-8 text-pretty text-lg font-base text-[#dfb88e]  max-w-xl">
-            інженерна екосистема <br />
-            збірного будівництва
+          <p className="md:mt-8 text-pretty text-xl font-base text-[#dfb88e]  max-w-xl">
+            Інноваційна інженерна <br />
+            система збірного будівництва
           </p>
           <h1 className=" text-pretty text-8xl lg:text-[200px] font-bold tracking-tight text-blue-600  ">
             iProk
