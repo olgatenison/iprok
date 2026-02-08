@@ -12,7 +12,7 @@ export default function WhoItsFor() {
     <section className="isolate overflow-hidden bg-black px-6 lg:px-8">
       <div className="relative mx-auto max-w-7xl py-12 sm:py-20">
         {/* decorative skew shape */}
-        <div className="absolute inset-y-0 right-1/2 -z-10 mr-56 w-[150vw] origin-bottom-left skew-x-[-68deg] bg-black ring-4 ring-[#2c5cf2] sm:mr-20 md:mr-0 lg:right-full lg:mr-65 lg:origin-center" />
+        <div className="absolute inset-y-0 right-1/2 -z-10 mr-56 w-[150vw] origin-bottom-left skew-x-[-68deg] bg-[#0f172a] ring-4 ring-[#2c5cf2] sm:mr-20 md:mr-0 lg:right-full lg:mr-65 lg:origin-center" />
 
         {/* layout */}
         <div className="flex w-full justify-start lg:justify-end">

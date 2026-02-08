@@ -9,18 +9,21 @@ import FAQ from "./components/FAQ";
 import WhoItsFor from "./components/WhoItsFor";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import System from "./components/System";
 
 export default function Home() {
   return (
     <div className="bg-white">
       <Hero />
       <Header />
+      <System />
       <DNA />
       <Stats />
       <Top />
-      <Philosophy />
+
       <Spheres />
       <FAQ />
+      <Philosophy />
       <WhoItsFor />
       <Contact />
       <Footer />
