@@ -61,7 +61,7 @@ export default function Contact() {
                 htmlFor="first-name"
                 className="block text-sm/6 font-semibold text-gray-900"
               >
-                Ім'я
+                Ім&apos;я
               </label>
               <div className="mt-2.5">
                 <input

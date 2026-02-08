@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ComponentType } from "react";
 import {
   BoltIcon,
   SunIcon,
@@ -6,7 +7,13 @@ import {
   Squares2X2Icon,
 } from "@heroicons/react/24/outline";
 
-const features = [
+type Feature = {
+  name: string;
+  description: string;
+  icon: ComponentType<React.SVGProps<SVGSVGElement>>;
+};
+
+const features: Feature[] = [
   {
     name: "Несуча здатність",
     description:
@@ -33,10 +40,14 @@ const features = [
   },
 ];
 
-function FeatureItem({ feature, align = "left" }) {
+type FeatureItemProps = {
+  feature: Feature;
+  align?: "left" | "right";
+};
+
+function FeatureItem({ feature, align = "left" }: FeatureItemProps) {
   const Icon = feature.icon;
 
-  // для lg-версии: слева текст вправо, справа текст влево
   const textAlign = align === "right" ? "text-left" : "text-left lg:text-right";
   const rowJustify =
     align === "right" ? "justify-start" : "justify-start lg:justify-end";
@@ -53,7 +64,7 @@ function FeatureItem({ feature, align = "left" }) {
         </span>
 
         <div className={`max-w-md ${textAlign}`}>
-          <dt className=" text-3xl font-semibold tracking-tight text-gray-900">
+          <dt className="text-3xl font-semibold tracking-tight text-gray-900">
             {feature.name}
           </dt>
           <dd className="mt-2 text-base leading-7 text-gray-600">
@@ -68,9 +79,9 @@ function FeatureItem({ feature, align = "left" }) {
 function CenterImage() {
   return (
     <div className="flex justify-center">
-      <div className="w-full  max-w-xl lg:max-w-md overflow-hidden bg-gray-50">
+      <div className="w-full max-w-xl lg:max-w-md overflow-hidden bg-gray-50">
         <Image
-          src="/img/dna2.jpg" // сюда можно поставить фото профиля или blueprint
+          src="/img/dna2.jpg"
           alt="Профіль iProk"
           width={900}
           height={900}
@@ -88,7 +99,6 @@ export default function DNA() {
   return (
     <section className="bg-white px-6 py-20 sm:py-28 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        {/* Title + subtitle */}
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-pretty text-4xl font-bold tracking-tight text-black sm:text-5xl">
             Конструктивна ДНК iProk
@@ -98,7 +108,7 @@ export default function DNA() {
           </p>
         </div>
 
-        {/* ✅ MOBILE (< md): 2 + image + 2 (как у тебя “идеально”) */}
+        {/* MOBILE */}
         <div className="mt-14 space-y-12 md:hidden">
           <dl className="grid gap-10">
             <FeatureItem feature={f1} />
@@ -113,7 +123,7 @@ export default function DNA() {
           </dl>
         </div>
 
-        {/* ✅ TABLET (md–lg): весь текст в 2 столбика, фото отдельно */}
+        {/* TABLET */}
         <div className="mt-14 hidden md:block lg:hidden">
           <dl className="grid grid-cols-2 gap-x-10 gap-y-10">
             {features.map((f) => (
@@ -126,7 +136,7 @@ export default function DNA() {
           </div>
         </div>
 
-        {/* ✅ DESKTOP (lg+): 2 слева / фото / 2 справа (как референс) */}
+        {/* DESKTOP */}
         <div className="mt-14 hidden lg:grid lg:grid-cols-12 lg:items-center lg:gap-12">
           <dl className="grid gap-10 lg:col-span-4">
             <FeatureItem feature={f1} align="left" />
