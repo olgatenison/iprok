@@ -33,7 +33,7 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <div className="bg-[#eceffa] ">
+    <div className="bg-white ">
       <div className="mx-auto max-w-7xl px-6 py-14 sm:py-20 lg:px-8">
         <h2 className=" text-pretty text-4xl font-bold tracking-tight text-[#2c5cf2] sm:text-5xl">
           Поширені запитання

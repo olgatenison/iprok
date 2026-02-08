@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { CheckIcon } from "@heroicons/react/20/solid";
 
 const points = [
@@ -11,33 +10,20 @@ const points = [
 export default function WhoItsFor() {
   return (
     <section className="isolate overflow-hidden bg-black px-6 lg:px-8">
-      <div className="relative mx-auto max-w-2xl py-12 sm:py-20 lg:max-w-4xl">
-        {/* background shapes (оставила твою идею) */}
+      <div className="relative mx-auto max-w-7xl py-12 sm:py-20">
+        {/* decorative skew shape */}
+        <div className="absolute inset-y-0 right-1/2 -z-10 mr-56 w-[150vw] origin-bottom-left skew-x-[-68deg] bg-black ring-4 ring-[#2c5cf2] sm:mr-20 md:mr-0 lg:right-full lg:mr-65 lg:origin-center" />
 
-        <div className="absolute inset-y-0 right-1/2 -z-10 mr-56 w-[150vw] origin-bottom-left skew-x-[-68deg] bg-black shadow-2xl shadow-indigo-500/0 ring-4 ring-[#2c5cf2] sm:mr-20 md:mr-0 lg:right-full lg:mr-65 lg:origin-center" />
-
-        <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-12">
-          {/* LEFT: text */}{" "}
-          <div className="lg:col-span-5 lg:pt-2">
-            <div className=" p-2">
-              {/* <Image
-                alt="Виробництво модулів iProk"
-                width={900}
-                height={900}
-                src="/img/office.png"
-                className="block w-full object-cover"
-                priority={false}
-              /> */}
-            </div>
-          </div>
-          {/* RIGHT: image */}
-          <div className="lg:col-span-7">
-            <div className=" p-8">
+        {/* layout */}
+        <div className="flex w-full justify-start lg:justify-end">
+          {/* content pinned to the right on lg */}
+          <div className="w-full max-w-xl  lg:ml-auto">
+            <div className="p-0 sm:p-4 lg:p-8">
               <h2 className="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">
                 Вам точно підійде iProk, якщо:
               </h2>
 
-              <ul className="mt-10 space-y-4">
+              <ul className="mt-10 space-y-5">
                 {points.map((text, idx) => (
                   <li key={idx} className="flex gap-3">
                     <span className="mt-1 inline-flex h-6 w-6 flex-none items-center justify-center">

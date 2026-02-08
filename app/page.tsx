@@ -1,6 +1,8 @@
 import Hero from "./components/Hero";
 import Header from "./components/Header";
 import Philosophy from "./components/Philosophy";
+import Spheres from "./components/Spheres";
+import DNA from "./components/DNA";
 import Stats from "./components/Stats";
 import Top from "./components/Top";
 import FAQ from "./components/FAQ";
@@ -13,10 +15,11 @@ export default function Home() {
     <div className="bg-white">
       <Hero />
       <Header />
-
+      <DNA />
       <Stats />
       <Top />
       <Philosophy />
+      <Spheres />
       <FAQ />
       <WhoItsFor />
       <Contact />
