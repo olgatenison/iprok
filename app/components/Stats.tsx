@@ -27,7 +27,7 @@ export default function Stats() {
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <h3 className="mt-12 text-pretty text-4xl font-bold tracking-tight text-[#2c5cf2] sm:text-5xl">
+        <h3 className=" text-pretty text-4xl font-bold tracking-tight text-[#2c5cf2] sm:text-5xl">
           Якість, створена в цеху, а не на будмайданчику
         </h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-12 items-stretch">
@@ -66,7 +66,7 @@ export default function Stats() {
                     className="flex flex-col gap-y-3 border-l-2 border-[#2c5cf2]/90 pl-6"
                   >
                     <dt className="text-sm/6 text-gray-600">{stat.name}</dt>
-                    <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900">
+                    <dd className="order-first text-2xl font-semibold tracking-tight text-gray-900">
                       {stat.value}
                     </dd>
                   </div>

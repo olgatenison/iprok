@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Top() {
   return (
-    <div className="  pt-8 pb-12 sm:pb-20">
+    <div className="  pt-8 pb-12 ">
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
         <h2 className="text-center text-base/7 font-semibold text-[#2c5cf2]">
           Швидкість{" "}

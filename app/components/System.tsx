@@ -1,217 +1,111 @@
-// import Image from "next/image";
-
-// const features = [
-//   {
-//     name: "Мінеральна вата",
-//     description:
-//       "Негорюча, добре гасить звук і стабільно працює в широкому діапазоні температур.",
-//     icon: "/img/001.png",
-//   },
-//   {
-//     name: "Піноізол",
-//     description:
-//       "Легкий матеріал для заповнення порожнин: мінімізує пустоти й підвищує рівномірність утеплення.",
-//     icon: "/img/002.png",
-//   },
-//   {
-//     name: "Пінополіуретан",
-//     description:
-//       "Щільне заповнення та висока теплоізоляція — для задач, де важливий максимум енергоефективності.",
-//     icon: "/img/003.png",
-//   },
-//   {
-//     name: "Ековата",
-//     description:
-//       "Целюлозний утеплювач, який добре заповнює порожнини й підходить для “теплих” рішень.",
-//     icon: "/img/004.png",
-//   },
-//   {
-//     name: "Інші сучасні ізоляційні матеріали",
-//     description:
-//       "Система адаптується під ТЗ: підбираємо утеплення під вимоги об’єкта та бюджету.",
-//     icon: "/img/005.png",
-//   },
-// ];
-
-// export default function System() {
-//   return (
-//     <section className="bg-white py-20 sm:py-28">
-//       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-//         {/* TOP TITLE */}
-//         <div className="mx-auto max-w-3xl text-center">
-//           <h2 className="text-pretty text-4xl font-bold tracking-tight text-black sm:text-6xl">
-//             Це не каркасний будинок.
-//             <span className="text-[#2c5cf2] block mt-3">
-//               Це інженерна екосистема.
-//             </span>
-//           </h2>
-//           <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg/8 text-gray-900">
-//             iProk — це цілісна система, де каркас, утеплення та обшивка працюють
-//             як єдиний моноліт.
-//           </p>
-//         </div>
-
-//         {/* MAIN */}
-//         <div className="mt-14 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-start">
-//           {/* LEFT: IMAGE */}
-//           <div className="lg:col-span-6">
-//             <div className="relative overflow-hidden bg-gray-50">
-//               <Image
-//                 src="/img/4.jpg"
-//                 alt="Зразок системи iProk"
-//                 width={1400}
-//                 height={1000}
-//                 className="h-auto w-full object-cover"
-//                 priority
-//               />
-//             </div>
-//           </div>
-
-//           {/* RIGHT: TEXT + LIST */}
-//           <div className="lg:col-span-6">
-//             {/* NEW TEXTS (как в референсе) */}
-//             <div className="mb-10">
-//               <h3 className="text-pretty text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-//                 Адаптивність теплоізоляції під вимоги{" "}
-//                 <span className="block">конкретного проєкту.</span>
-//               </h3>
-
-//               <p className="mt-4 text-base leading-7 text-gray-600">
-//                 Система не обмежена одним типом утеплювача. Після монтажу
-//                 каркасу конструкція адаптується під технічне завдання.
-//               </p>
-//             </div>
-
-//             <p className="mb-6 inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-[#2c5cf2] uppercase">
-//               <span className="h-px w-8 bg-[#2c5cf2]/70" aria-hidden="true" />
-//               Варіанти утеплювача
-//             </p>
-
-//             {/* FEATURES */}
-//             <dl className="space-y-8">
-//               {features.map((feature) => (
-//                 <div key={feature.name} className="flex gap-5">
-//                   {/* icon */}
-//                   <div className="flex-none">
-//                     <div className="relative h-12 w-12 overflow-hidden bg-gray-100">
-//                       <Image
-//                         src={feature.icon}
-//                         alt=""
-//                         fill
-//                         sizes="48px"
-//                         className="object-cover"
-//                         aria-hidden="true"
-//                       />
-//                     </div>
-//                   </div>
-
-//                   {/* text */}
-//                   <div>
-//                     <dt className="font-semibold text-gray-900">
-//                       {feature.name}
-//                     </dt>
-//                     <dd className="mt-2 text-base leading-7 text-gray-600">
-//                       {feature.description}
-//                     </dd>
-//                   </div>
-//                 </div>
-//               ))}
-//             </dl>
-
-//             {/* BOTTOM NOTE + BADGE */}
-//             <div className="mt-10 space-y-4">
-//               <p className="text-base leading-7 text-gray-600">
-//                 Модулі з&apos;єднуються листовими матеріалами, формуючи жорстку
-//                 та стабільну конструкцію з прогнозованими властивостями.
-//               </p>
-
-//               <div className="inline-flex items-center gap-3 border border-[#2c5cf2]/40 bg-[#2c5cf2]/5 px-4 py-3">
-//                 <span
-//                   className="inline-flex h-9 w-9 items-center justify-center bg-white ring-1 ring-[#2c5cf2]/20"
-//                   aria-hidden="true"
-//                 >
-//                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-//                     <path
-//                       d="M12 2l3 6 6 .9-4.5 4.4 1.1 6.2L12 16.9 6.4 19.5l1.1-6.2L3 8.9 9 8l3-6z"
-//                       stroke="#2c5cf2"
-//                       strokeWidth="1.6"
-//                       strokeLinejoin="round"
-//                     />
-//                   </svg>
-//                 </span>
-
-//                 <p className="text-sm font-medium text-gray-800">
-//                   Екологічно безпечний склад профілю та утеплювача.
-//                 </p>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
 import Image from "next/image";
 
 const features = [
   {
     name: "Мінеральна вата",
     description:
-      "Негорюча, добре гасить звук і стабільно працює в широкому діапазоні температур.",
+      "Негорюча й стабільна у будь-яку пору року: ефективно приглушує шум і зберігає тепло навіть за перепадів температур.",
     icon: "/img/001.png",
   },
   {
     name: "Піноізол",
     description:
-      "Легкий матеріал для заповнення порожнин: мінімізує пустоти й підвищує рівномірність утеплення.",
+      "Ідеально для заповнення порожнин: рівномірно розподіляється, прибирає “містки холоду” та підвищує якість утеплення.",
     icon: "/img/002.png",
   },
   {
     name: "Пінополіуретан",
     description:
-      "Щільне заповнення та висока теплоізоляція — для задач, де важливий максимум енергоефективності.",
+      "Максимум енергоефективності: щільне заповнення, висока теплоізоляція та герметичність для найвимогливіших задач.",
     icon: "/img/003.png",
   },
   {
     name: "Ековата",
     description:
-      "Целюлозний утеплювач, який добре заповнює порожнини й підходить для “теплих” рішень.",
+      "Екологічне рішення, яке щільно заповнює порожнини й створює комфортний мікроклімат у будинку.",
     icon: "/img/004.png",
   },
   {
     name: "Інші сучасні ізоляційні матеріали",
     description:
-      "Система адаптується під ТЗ: підбираємо утеплення під вимоги об’єкта та бюджету.",
+      "Підлаштовуємось під ТЗ, бюджет і об’єкт: підбираємо утеплення, яке дає потрібний результат саме вам.",
     icon: "/img/005.png",
   },
 ];
 
 export default function System() {
   return (
-    <section className="bg-white py-20 sm:py-28">
+    <section className="bg-white py-14 sm:pt-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Title + subtitle */}
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-pretty text-4xl font-bold tracking-tight text-black sm:text-6xl">
-            Це не каркасний будинок.
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="text-pretty text-3xl font-bold tracking-tight text-black sm:text-5xl">
+            Це не просто каркасний будинок.
             <span className="text-[#2c5cf2] block mt-3">
-              Це інженерна екосистема.
+              Це інженерна екосистема комфорту.
             </span>
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg/8 text-gray-900">
-            iProk — це цілісна система, де каркас, утеплення та обшивка працюють
-            як єдиний моноліт.
-          </p>
+        </div>
+
+        {/* Text block */}
+        <div className="mt-16 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-x-12">
+          <div>
+            <h2 className="text-pretty text-2xl font-bold tracking-tight text-gray-900 sm:text-3хl">
+              iProk — це продумана система, де каркас, утеплення та обшивка
+              працюють як єдиний моноліт.
+            </h2>
+            <p className="mt-6 text-xl/8 text-gray-600">
+              Це не “типовий каркасник”. iProk — комплексне рішення, у якому
+              кожен елемент підсилює інший: менше тепловтрат, більше жорсткості,
+              тиша та стабільний мікроклімат у будинку.
+            </p>
+            <div className="flex items-center gap-4 mt-4">
+              <Image
+                src="/img/eco_safe_icon_512_final.png"
+                alt="Екологічно безпечні матеріали"
+                width={64}
+                height={64}
+              />
+              <p className="text-[#003fdd] font-semibold">
+                Екологічно безпечний склад
+                <br />
+                профілю та утеплювача.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <p className="text-xl/8 text-gray-600">
+              <b>Конструктивна основа.</b> Несуча частина iProk — міцний
+              металопластиковий каркас. Він виготовляється модульно у
+              контрольованих виробничих умовах, тому якість — прогнозована, а
+              монтаж — швидкий і точний.
+            </p>
+
+            <p className="mt-6 text-xl/8 text-gray-600">
+              <b>Гнучкість у виборі утеплення.</b> Система не прив’язана до
+              одного матеріалу: після монтажу каркасу ми підбираємо утеплювач
+              під ваше технічне завдання — енергоефективність, акустика, бюджет,
+              сезонність.
+            </p>
+
+            <p className="mt-6 text-xl/8 text-gray-600">
+              <b>Фінальна обшивка — під стиль проєкту.</b> Модулі з’єднуються
+              листовими матеріалами, формуючи жорстку, стабільну конструкцію з
+              прогнозованими властивостями. А зовнішнє та внутрішнє оздоблення
+              може бути будь-яким: фасадні системи, панелі, штукатурка та інші
+              рішення — залежно від ваших потреб.
+            </p>
+          </div>
         </div>
 
         {/* Main layout */}
-        <div className="mt-14 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-start">
+        <div className="mt-16 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-start">
           {/* LEFT: image */}
           <div className="lg:col-span-6">
-            <div className="relative overflow-hidden bg-gray-50">
+            <div className="relative overflow-hidden bg-gray-50 mt-12">
               <Image
-                src="/img/4.jpg" // ✅ public/img/4.jpg
+                src="/img/4.jpg"
                 alt="Зразок системи iProk"
                 width={1200}
                 height={900}
@@ -223,15 +117,22 @@ export default function System() {
 
           {/* RIGHT: list */}
           <div className="lg:col-span-6">
-            <dl className="space-y-8">
+            <p className="mb-6 text-3xl font-semibold tracking-tight text-[#2c5cf2]">
+              Утеплення під ваше завдання:
+            </p>
+
+            <dl className="space-y-5">
               {features.map((feature) => (
-                <div key={feature.name} className="flex gap-5">
+                <div
+                  key={feature.name}
+                  className="flex gap-5 items-center max-w-lg"
+                >
                   {/* icon */}
                   <div className="flex-none">
                     <div className="relative h-12 w-12 overflow-hidden bg-gray-100">
                       <Image
                         src={feature.icon}
-                        alt="" // декоративно, название рядом
+                        alt=""
                         fill
                         className="object-cover"
                         sizes="48px"
@@ -241,11 +142,11 @@ export default function System() {
                   </div>
 
                   {/* text */}
-                  <div>
-                    <dt className="font-semibold text-gray-900">
+                  <div className="max-w-xl">
+                    <dt className="text-2xl font-semibold tracking-tight text-gray-900">
                       {feature.name}
                     </dt>
-                    <dd className="mt-2 text-base leading-7 text-gray-600">
+                    <dd className="text-base leading-7 text-gray-600">
                       {feature.description}
                     </dd>
                   </div>
@@ -254,6 +155,8 @@ export default function System() {
             </dl>
           </div>
         </div>
+
+        <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg/8 text-gray-900" />
       </div>
     </section>
   );

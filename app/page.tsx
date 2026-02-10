@@ -10,6 +10,8 @@ import WhoItsFor from "./components/WhoItsFor";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import System from "./components/System";
+import ValueSection from "./components/ValueSection";
+import HonestEngineering from "./components/HonestEngineering";
 
 export default function Home() {
   return (
@@ -17,13 +19,15 @@ export default function Home() {
       <Hero />
       <Header />
       <System />
-      <DNA />
       <Stats />
       <Top />
-
+      <DNA />
       <Spheres />
       <FAQ />
       <Philosophy />
+
+      <ValueSection />
+      <HonestEngineering />
       <WhoItsFor />
       <Contact />
       <Footer />
