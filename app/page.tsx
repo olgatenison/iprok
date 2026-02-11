@@ -16,21 +16,36 @@ import HonestEngineering from "./components/HonestEngineering";
 export default function Home() {
   return (
     <div className="bg-white">
-      <Hero />
+      {" "}
       <Header />
+      <Hero />
       <System />
       <Stats />
       <Top />
       <DNA />
       <Spheres />
-      <FAQ />
-      <Philosophy />
-
       <ValueSection />
       <HonestEngineering />
+      <Philosophy />
+      <FAQ />
       <WhoItsFor />
       <Contact />
       <Footer />
+      {/* <Hero />
+      <Header />
+      <System />
+      <Stats />
+      <Top />
+      <HonestEngineering />
+
+      <ValueSection />
+      <DNA />
+      <Spheres />
+      <FAQ />
+      <Philosophy />
+      <WhoItsFor />
+      <Contact />
+      <Footer /> */}
     </div>
   );
 }

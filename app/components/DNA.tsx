@@ -97,7 +97,7 @@ export default function DNA() {
   const [f1, f2, f3, f4] = features;
 
   return (
-    <section className="bg-white px-6 pt-8 pb-16 lg:px-8">
+    <section id="constructive" className="bg-white px-6 pt-8 pb-16 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-pretty text-4xl font-bold tracking-tight text-black sm:text-5xl">

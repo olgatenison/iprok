@@ -35,7 +35,7 @@ const features = [
 
 export default function System() {
   return (
-    <section className="bg-white py-14 sm:pt-20">
+    <section id="system" className="bg-white py-14 sm:pt-20 ">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Title + subtitle */}
         <div className="mx-auto max-w-4xl text-center">
@@ -54,7 +54,7 @@ export default function System() {
               iProk — це продумана система, де каркас, утеплення та обшивка
               працюють як єдиний моноліт.
             </h2>
-            <p className="mt-6 text-xl/8 text-gray-600">
+            <p className="mt-6 text-lg/8 text-gray-600">
               Це не “типовий каркасник”. iProk — комплексне рішення, у якому
               кожен елемент підсилює інший: менше тепловтрат, більше жорсткості,
               тиша та стабільний мікроклімат у будинку.
@@ -75,21 +75,21 @@ export default function System() {
           </div>
 
           <div>
-            <p className="text-xl/8 text-gray-600">
+            <p className="text-lg/8 text-gray-600">
               <b>Конструктивна основа.</b> Несуча частина iProk — міцний
               металопластиковий каркас. Він виготовляється модульно у
               контрольованих виробничих умовах, тому якість — прогнозована, а
               монтаж — швидкий і точний.
             </p>
 
-            <p className="mt-6 text-xl/8 text-gray-600">
+            <p className="mt-6 text-lg/8 text-gray-600">
               <b>Гнучкість у виборі утеплення.</b> Система не прив’язана до
               одного матеріалу: після монтажу каркасу ми підбираємо утеплювач
               під ваше технічне завдання — енергоефективність, акустика, бюджет,
               сезонність.
             </p>
 
-            <p className="mt-6 text-xl/8 text-gray-600">
+            <p className="mt-6 text-lg/8 text-gray-600">
               <b>Фінальна обшивка — під стиль проєкту.</b> Модулі з’єднуються
               листовими матеріалами, формуючи жорстку, стабільну конструкцію з
               прогнозованими властивостями. А зовнішнє та внутрішнє оздоблення
@@ -103,13 +103,13 @@ export default function System() {
         <div className="mt-16 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-start">
           {/* LEFT: image */}
           <div className="lg:col-span-6">
-            <div className="relative overflow-hidden bg-gray-50 mt-12">
+            <div className="relative overflow-hidden  -mt-20">
               <Image
-                src="/img/4.jpg"
+                src="/img/w.png"
                 alt="Зразок системи iProk"
                 width={1200}
-                height={900}
-                className="h-auto w-full object-cover"
+                height={400}
+                className="h-auto w-120 object-cover"
                 priority
               />
             </div>

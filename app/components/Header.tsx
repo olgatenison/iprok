@@ -6,13 +6,13 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "Система", href: "#" },
-  { name: "Як працює", href: "#" },
-  { name: "Переваги", href: "#" },
-  { name: "Застосування", href: "#" },
-  { name: "Порівняння", href: "#" },
-  { name: "FAQ", href: "#" },
-  { name: "Контакти", href: "#" },
+  { name: "Система", href: "#system" },
+  { name: "Виробництво", href: "#production" },
+  { name: "Конструктив", href: "#constructive" },
+  { name: "Застосування", href: "#use-cases" },
+  { name: "Переваги", href: "#advantages" },
+  { name: "FAQ", href: "#faq" },
+  { name: "Контакти", href: "#contacts" },
 ];
 
 export default function Header() {

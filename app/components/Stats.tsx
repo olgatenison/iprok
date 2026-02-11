@@ -25,7 +25,7 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="bg-white">
+    <section id="production" className="bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <h3 className=" text-pretty text-4xl font-bold tracking-tight text-[#2c5cf2] sm:text-5xl">
           Якість, створена в цеху, а не на будмайданчику
@@ -49,7 +49,7 @@ export default function Stats() {
           <div className="pb-24 pt-12 sm:pb-32 lg:py-16">
             <div className="max-w-2xl">
               <h2 className="text-lg font-bold text-[#2c5cf2]">
-                Переваги заводу
+                Чому завод — це перевага
               </h2>
 
               <p className="mt-3 text-lg/8 text-gray-600">
@@ -65,7 +65,7 @@ export default function Stats() {
                     key={stat.id}
                     className="flex flex-col gap-y-3 border-l-2 border-[#2c5cf2]/90 pl-6"
                   >
-                    <dt className="text-sm/6 text-gray-600">{stat.name}</dt>
+                    <dt className="text-base text-gray-600">{stat.name}</dt>
                     <dd className="order-first text-2xl font-semibold tracking-tight text-gray-900">
                       {stat.value}
                     </dd>

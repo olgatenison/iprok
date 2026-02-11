@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="relative isolate overflow-hidden bg-black py-12 sm:py-30">
+    <div className="relative isolate overflow-hidden bg-black py-12 sm:py-20">
       <Image
         alt=""
         width={1200}
@@ -21,6 +21,7 @@ export default function Hero() {
           <h1 className=" text-pretty text-8xl lg:text-[200px] font-bold tracking-tight text-blue-600  ">
             iProk
           </h1>
+
           <p className="mt-8 text-pretty text-lg font-base text-gray-500 max-w-50 lg:max-w-xl">
             <span className="text-white block font-semibold">
               Технологія, яка спрощує будівництво:
@@ -28,6 +29,12 @@ export default function Hero() {
             Від хаосу на майданчику — до заводської точності. <br />
             90% робіт переносимо в цех — на об’єкті залишається монтаж.
           </p>
+          <a
+            href="#contacts"
+            className="block w-fit mt-12 bg-transparent border-white border px-8 py-3 text-center  text-white shadow-sm hover:bg-[#2c5cf2] focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-[#2c5cf2] text-xl tracking-tight "
+          >
+            Отримати консультацію
+          </a>
         </div>
       </div>
     </div>

@@ -23,7 +23,7 @@ export default function ValueSection() {
   ];
 
   return (
-    <section className="bg-white pt-14 sm:pt-20">
+    <section id="advantages" className="bg-white pt-14 sm:pt-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Title */}
         <h2 className="text-balance text-4xl font-bold tracking-tight text-black sm:text-5xl my-10">
@@ -55,7 +55,7 @@ export default function ValueSection() {
         </div>
 
         {/* Timeline */}
-        <div className="mt-12">
+        <div className="mt-18">
           <div className="relative">
             {/* line */}
             <div className="h-2 w-full rounded-full bg-linear-to-r from-[#2c5cf2]/35 to-[#2c5cf2] " />

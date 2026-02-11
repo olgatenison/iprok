@@ -1,6 +1,9 @@
 export default function Contact() {
   return (
-    <div className=" bg-white px-6 py-0 md:py-20 lg:px-8 max-w-7xl mx-auto -mb-6">
+    <section
+      id="contacts"
+      className=" bg-white px-6 py-0 md:py-20 lg:px-8 max-w-7xl mx-auto -mb-6"
+    >
       <div className="flex lg:flex-row flex-col items-start gap-12">
         {/* title block left than center*/}
         <div className="mx-auto max-w-2xl ">
@@ -216,6 +219,6 @@ export default function Contact() {
           </dl>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
