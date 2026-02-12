@@ -75,12 +75,14 @@ export default function Spheres() {
           </article>
         ))}
       </div>{" "}
-      <p className="mx-auto my-5 text-balance text-center text-5xl/14 font-bold tracking-tight max-w-4xl text-[#2c5cf2]">
-        iProk не обмежує архітектурні рішення та адаптується під різні масштаби.
-      </p>
-      <a
-        href="#contacts"
-        className="
+      <div className="px-8">
+        <p className="mx-auto my-5 text-balance text-center text-5xl/14 font-bold tracking-tight max-w-4xl text-[#2c5cf2]">
+          iProk не обмежує архітектурні рішення та адаптується під різні
+          масштаби.
+        </p>
+        <a
+          href="#contacts"
+          className="
     relative z-10 block w-fit mx-auto mt-12
     bg-[#2c5cf2] px-8 py-3 text-center
     text-white shadow-sm
@@ -89,9 +91,10 @@ export default function Spheres() {
     hover:bg-[#244fe0] 
   focus-visible:outline-offset-2 focus-visible:outline-[#2c5cf2]
   "
-      >
-        Отримати консультацію
-      </a>
+        >
+          Отримати консультацію
+        </a>
+      </div>
     </section>
   );
 }

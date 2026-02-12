@@ -32,7 +32,7 @@ export default function Contact() {
                     className=" hover:text-[#2c5cf2] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2c5cf2]"
                     aria-label="Написати на email info@iprok.com.ua"
                   >
-                    info@iprok.com.ua
+                    iprok.ua2026@gmail.com
                   </a>
                 </dd>
               </div>

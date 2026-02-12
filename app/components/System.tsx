@@ -36,7 +36,7 @@ const features = [
 export default function System() {
   return (
     <section id="system" className="bg-white py-14 sm:pt-20 ">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-2xl lg:max-w-7xl px-6 lg:px-8">
         {/* Title + subtitle */}
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-pretty text-3xl font-bold tracking-tight text-black sm:text-5xl">
@@ -100,32 +100,32 @@ export default function System() {
         </div>
 
         {/* Main layout */}
-        <div className="mt-16 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-start">
+        <div className="mt-16 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-x-12 place-items-center lg:place-items-stretch">
           {/* LEFT: image */}
-          <div className="lg:col-span-6">
-            <div className="relative overflow-hidden  -mt-20">
+          <div className="w-full">
+            <div className="relative overflow-hidden lg:-mt-20 mx-auto flex justify-center">
               <Image
                 src="/img/w.png"
                 alt="Зразок системи iProk"
                 width={1200}
                 height={400}
-                className="h-auto w-120 object-cover"
+                className="h-auto w-full max-w-2xl object-contain"
                 priority
               />
             </div>
           </div>
 
           {/* RIGHT: list */}
-          <div className="lg:col-span-6">
-            <p className="mb-6 text-3xl font-semibold tracking-tight text-[#2c5cf2]">
+          <div className="w-full max-w-4xl mx-auto lg:mx-0">
+            <p className="mb-6 text-3xl font-semibold tracking-tight text-[#2c5cf2] text-center lg:text-left">
               Утеплення під ваше завдання:
             </p>
 
-            <dl className="space-y-5">
+            <dl className="space-y-5 w-full">
               {features.map((feature) => (
                 <div
                   key={feature.name}
-                  className="flex gap-5 items-center max-w-lg"
+                  className="flex gap-5 items-center w-full"
                 >
                   {/* icon */}
                   <div className="flex-none">
@@ -142,7 +142,7 @@ export default function System() {
                   </div>
 
                   {/* text */}
-                  <div className="max-w-xl">
+                  <div className="w-full">
                     <dt className="text-2xl font-semibold tracking-tight text-gray-900">
                       {feature.name}
                     </dt>

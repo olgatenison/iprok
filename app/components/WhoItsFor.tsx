@@ -36,9 +36,9 @@ export default function WhoItsFor() {
 
           {/* RIGHT: content */}
           <div className="lg:col-span-7 lg:justify-self-end">
-            <div className="w-full max-w-xl lg:ml-auto">
+            <div className="w-full max-w-xl mx-auto lg:ml-auto">
               <div className="p-0 sm:p-4 lg:p-8">
-                <h2 className="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+                <h2 className="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl text-center lg:text-left">
                   Вам точно підійде iProk, якщо:
                 </h2>
 

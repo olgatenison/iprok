@@ -10,12 +10,12 @@ export default function HonestEngineering() {
 
   return (
     <section className="bg-white pt-10 pb-20">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-2xl lg:max-w-7xl px-6 lg:px-8">
         {/* Process + scale */}
         <div className="mt-14 grid grid-cols-1 gap-15 lg:grid-cols-12 lg:items-center">
           {/* Left: steps */}
           <div className="lg:col-span-7">
-            <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-black">
+            <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-black text-balance">
               Більша частина робіт — у контрольованому середовищі на заводі
             </h3>
 

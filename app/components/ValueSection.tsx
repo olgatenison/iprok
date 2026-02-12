@@ -26,17 +26,16 @@ export default function ValueSection() {
     <section id="advantages" className="bg-white pt-14 sm:pt-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Title */}
-        <h2 className="text-balance text-4xl font-bold tracking-tight text-black sm:text-5xl my-10">
+        <h2 className="text-balance text-4xl font-bold tracking-tight text-black lg:text-5xl my-10 lg:mx-0 mx-auto md:text-left text-center md:w-full max-w-xl">
           Ми вибудовали для вас систему, що забезпечує повну передбачуваність
           результату
         </h2>
 
         {/* 4 columns */}
-        <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 place-items-center lg:place-items-stretch">
           {items.map((it) => (
-            <div key={it.n} className="relative">
+            <div key={it.n} className="relative w-full max-w-sm">
               <div className="flex items-start gap-3">
-                {/* dot */}
                 <span className="mt-2 inline-block h-3 w-3 rounded-full bg-[#2c5cf2] shrink-0" />
                 <div>
                   <p className="text-xl font-semibold text-black">
