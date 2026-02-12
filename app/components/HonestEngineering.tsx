@@ -45,7 +45,7 @@ export default function HonestEngineering() {
 
               <div className="mt-4">
                 <Image
-                  src="/img/progress_bars_90pct_2c5cf2_2x.png"
+                  src="/img/progress_bars_90pct_2c5cf2_2x.webp"
                   alt="90% робіт виконано у контрольованих умовах"
                   width={592}
                   height={142}

@@ -4,21 +4,21 @@ const collections = [
   {
     name: "Об'єкти зі змішаним функціональним призначенням",
     details: "Перший поверх — комерція, вище — житло або офіси.",
-    imageSrc: "/img/01.jpg",
+    imageSrc: "/img/01.webp",
     imageAlt: "Змішане призначення: комерція на 1-му поверсі, житло/офіси вище",
   },
   {
     name: "Житлові об'єкти різного типу",
     details:
       "Приватні будинки, таунхауси, котеджні містечка, малоповерхові ЖК.",
-    imageSrc: "/img/02.jpg",
+    imageSrc: "/img/02.webp",
     imageAlt: "Житлові об’єкти різного типу",
   },
   {
     name: "Технологічні проєкти з прогнозованим результатом",
     details:
       "Виробничі та інженерні будівлі: цехи, майстерні, станції сервісу.",
-    imageSrc: "/img/03.jpg",
+    imageSrc: "/img/03.webp",
     imageAlt: "Інженерні та виробничі об’єкти з прогнозованим результатом",
   },
 ];
@@ -39,10 +39,6 @@ export default function Spheres() {
         <p className="mt-3 text-xl text-white/80">
           там, де важлива інженерна логіка.
         </p>
-        {/* <p className="mt-3 text-lg text-white/70">
-          Система не обмежує архітектурні рішення та адаптується під різні
-          масштаби.
-        </p> */}
       </div>
       {/* Cards */}
       <div className="relative mx-auto -mt-10 grid max-w-md grid-cols-1 gap-6 px-6 pb-16 sm:-mt-20 sm:max-w-7xl sm:grid-cols-3 lg:gap-8 lg:px-8">

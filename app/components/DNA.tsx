@@ -53,35 +53,44 @@ function FeatureItem({ feature, align = "left" }: FeatureItemProps) {
     align === "right" ? "justify-start" : "justify-start lg:justify-end";
 
   return (
-    <div className={`flex ${rowJustify}`}>
-      <div
-        className={`flex gap-4 ${
-          align === "right" ? "flex-row" : "flex-row lg:flex-row-reverse"
-        }`}
-      >
-        <span className="mt-1 inline-flex h-8 w-8 flex-none items-center justify-center">
-          <Icon className="h-7 w-7 text-[#2c5cf2]" aria-hidden="true" />
-        </span>
+    <>
+      {/* TERM */}
+      <dt className={`flex ${rowJustify}`}>
+        <div
+          className={`flex gap-4 ${
+            align === "right" ? "flex-row" : "flex-row lg:flex-row-reverse"
+          }`}
+        >
+          <span className="mt-1 inline-flex h-8 w-8 flex-none items-center justify-center">
+            <Icon className="h-7 w-7 text-[#2c5cf2]" aria-hidden="true" />
+          </span>
 
-        <div className={`max-w-md ${textAlign}`}>
-          <dt className="text-3xl font-semibold tracking-tight text-gray-900">
+          <span
+            className={`max-w-md ${textAlign} text-3xl font-semibold tracking-tight text-gray-900`}
+          >
             {feature.name}
-          </dt>
-          <dd className="mt-2 text-base leading-7 text-gray-600">
-            {feature.description}
-          </dd>
+          </span>
         </div>
-      </div>
-    </div>
+      </dt>
+
+      {/* DESCRIPTION */}
+      <dd className={`mt-2 flex ${rowJustify}`}>
+        <div className={`max-w-md ${textAlign}`}>
+          <p className="text-base leading-7 text-gray-600">
+            {feature.description}
+          </p>
+        </div>
+      </dd>
+    </>
   );
 }
 
 function CenterImage() {
   return (
     <div className="flex justify-center">
-      <div className="w-full max-w-xl lg:max-w-md overflow-hidden bg-gray-50">
+      <div className="w-full max-w-xl overflow-hidden bg-gray-50 lg:max-w-md">
         <Image
-          src="/img/dna2.jpg"
+          src="/img/dna2.webp"
           alt="Профіль iProk"
           width={900}
           height={900}

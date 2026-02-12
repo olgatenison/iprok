@@ -32,7 +32,7 @@ export default function FooterHeader() {
                 alt="iProk"
                 width={300}
                 height={32}
-                src="/img/logo.jpg"
+                src="/img/logo.webp"
                 className="h-8 w-auto"
                 priority
               />

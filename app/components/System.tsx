@@ -5,43 +5,43 @@ const features = [
     name: "Мінеральна вата",
     description:
       "Негорюча й стабільна у будь-яку пору року: ефективно приглушує шум і зберігає тепло навіть за перепадів температур.",
-    icon: "/img/001.png",
+    icon: "/img/001.webp",
   },
   {
     name: "Піноізол",
     description:
       "Ідеально для заповнення порожнин: рівномірно розподіляється, прибирає “містки холоду” та підвищує якість утеплення.",
-    icon: "/img/002.png",
+    icon: "/img/002.webp",
   },
   {
     name: "Пінополіуретан",
     description:
       "Максимум енергоефективності: щільне заповнення, висока теплоізоляція та герметичність для найвимогливіших задач.",
-    icon: "/img/003.png",
+    icon: "/img/003.webp",
   },
   {
     name: "Ековата",
     description:
       "Екологічне рішення, яке щільно заповнює порожнини й створює комфортний мікроклімат у будинку.",
-    icon: "/img/004.png",
+    icon: "/img/004.webp",
   },
   {
     name: "Інші сучасні ізоляційні матеріали",
     description:
       "Підлаштовуємось під ТЗ, бюджет і об’єкт: підбираємо утеплення, яке дає потрібний результат саме вам.",
-    icon: "/img/005.png",
+    icon: "/img/005.webp",
   },
 ];
 
 export default function System() {
   return (
-    <section id="system" className="bg-white py-14 sm:pt-20 ">
-      <div className="mx-auto max-w-2xl lg:max-w-7xl px-6 lg:px-8">
-        {/* Title + subtitle */}
+    <section id="system" className="bg-white py-14 sm:pt-20">
+      <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+        {/* Title */}
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-pretty text-3xl font-bold tracking-tight text-black sm:text-5xl">
             Це не просто каркасний будинок.
-            <span className="text-[#2c5cf2] block mt-3">
+            <span className="mt-3 block text-[#2c5cf2]">
               Це інженерна екосистема комфорту.
             </span>
           </h2>
@@ -50,23 +50,25 @@ export default function System() {
         {/* Text block */}
         <div className="mt-16 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-x-12">
           <div>
-            <h2 className="text-pretty text-2xl font-bold tracking-tight text-gray-900 sm:text-3хl">
+            <h2 className="text-pretty text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
               iProk — це продумана система, де каркас, утеплення та обшивка
               працюють як єдиний моноліт.
             </h2>
+
             <p className="mt-6 text-lg/8 text-gray-600">
               Це не “типовий каркасник”. iProk — комплексне рішення, у якому
               кожен елемент підсилює інший: менше тепловтрат, більше жорсткості,
               тиша та стабільний мікроклімат у будинку.
             </p>
-            <div className="flex items-center gap-4 mt-4">
+
+            <div className="mt-4 flex items-center gap-4">
               <Image
-                src="/img/eco_safe_icon_512_final.png"
+                src="/img/eco_safe_icon_512_final.webp"
                 alt="Екологічно безпечні матеріали"
                 width={64}
                 height={64}
               />
-              <p className="text-[#003fdd] font-semibold">
+              <p className="font-semibold text-[#003fdd]">
                 Екологічно безпечний склад
                 <br />
                 профілю та утеплювача.
@@ -99,13 +101,13 @@ export default function System() {
           </div>
         </div>
 
-        {/* Main layout */}
-        <div className="mt-16 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-x-12 place-items-center lg:place-items-stretch">
+        {/* Image + list */}
+        <div className="mt-16 grid grid-cols-1 place-items-center gap-10 lg:grid-cols-2 lg:gap-x-12 lg:place-items-stretch">
           {/* LEFT: image */}
           <div className="w-full">
-            <div className="relative overflow-hidden lg:-mt-20 mx-auto flex justify-center">
+            <div className="relative mx-auto flex justify-center overflow-hidden lg:-mt-20">
               <Image
-                src="/img/w.png"
+                src="/img/w.webp"
                 alt="Зразок системи iProk"
                 width={1200}
                 height={400}
@@ -115,41 +117,40 @@ export default function System() {
             </div>
           </div>
 
-          {/* RIGHT: list */}
-          <div className="w-full max-w-4xl mx-auto lg:mx-0">
-            <p className="mb-6 text-3xl font-semibold tracking-tight text-[#2c5cf2] text-center lg:text-left">
+          {/* RIGHT: list (валидный dl) */}
+          <div className="mx-auto w-full max-w-4xl lg:mx-0">
+            <p className="mb-6 text-center text-3xl font-semibold tracking-tight text-[#2c5cf2] lg:text-left">
               Утеплення під ваше завдання:
             </p>
 
-            <dl className="space-y-5 w-full">
+            <dl className="w-full space-y-5">
               {features.map((feature) => (
-                <div
-                  key={feature.name}
-                  className="flex gap-5 items-center w-full"
-                >
-                  {/* icon */}
-                  <div className="flex-none">
-                    <div className="relative h-12 w-12 overflow-hidden bg-gray-100">
-                      <Image
-                        src={feature.icon}
-                        alt=""
-                        fill
-                        className="object-cover"
-                        sizes="48px"
-                        aria-hidden="true"
-                      />
-                    </div>
-                  </div>
+                <div key={feature.name} className="w-full">
+                  <dt className="flex items-center gap-5">
+                    {/* icon */}
+                    <span className="flex-none">
+                      <span className="relative block h-12 w-12 overflow-hidden bg-gray-100">
+                        <Image
+                          src={feature.icon}
+                          alt=""
+                          fill
+                          className="object-cover"
+                          sizes="48px"
+                          aria-hidden="true"
+                        />
+                      </span>
+                    </span>
 
-                  {/* text */}
-                  <div className="w-full">
-                    <dt className="text-2xl font-semibold tracking-tight text-gray-900">
+                    {/* title */}
+                    <span className="text-2xl font-semibold tracking-tight text-gray-900">
                       {feature.name}
-                    </dt>
-                    <dd className="text-base leading-7 text-gray-600">
-                      {feature.description}
-                    </dd>
-                  </div>
+                    </span>
+                  </dt>
+
+                  {/* description aligned under title */}
+                  <dd className="mt-2 pl-17 text-base leading-7 text-gray-600">
+                    {feature.description}
+                  </dd>
                 </div>
               ))}
             </dl>

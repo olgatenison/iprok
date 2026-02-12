@@ -20,7 +20,7 @@ export default function WhoItsFor() {
           <div className="lg:col-span-5">
             <figure className="relative mx-auto w-full max-w-md">
               <Image
-                src="/img/patent.png"
+                src="/img/patent.webp"
                 alt="Патент iProk"
                 width={900}
                 height={900}

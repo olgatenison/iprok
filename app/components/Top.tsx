@@ -26,7 +26,7 @@ export default function Top() {
             alt=""
             width={570}
             height={170}
-            src="/img/three-2.png"
+            src="/img/three-2.webp"
             className="mx-auto"
           />
         </div>

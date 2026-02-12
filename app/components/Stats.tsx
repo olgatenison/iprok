@@ -37,7 +37,7 @@ export default function Stats() {
             <div className="relative w-full overflow-hidden bg-gray-50 h-56 sm:h-80 lg:h-140">
               <Image
                 alt="Виробництво iProk"
-                src="/img/office.png"
+                src="/img/office.webp"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
