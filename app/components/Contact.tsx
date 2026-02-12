@@ -34,7 +34,7 @@ export default function Contact() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitState, setSubmitState] = useState<"idle" | "success" | "error">(
-    "idle"
+    "idle",
   );
 
   const validate = (values: FormState): FormErrors => {
@@ -101,7 +101,7 @@ export default function Contact() {
     (
       ev:
         | React.ChangeEvent<HTMLInputElement>
-        | React.ChangeEvent<HTMLTextAreaElement>
+        | React.ChangeEvent<HTMLTextAreaElement>,
     ) => {
       const value = ev.target.value;
       const next = { ...form, [key]: value };
@@ -182,7 +182,7 @@ export default function Contact() {
   };
 
   return (
-    <div className=" bg-white px-6 py-0 md:py-20 lg:px-8 max-w-7xl mx-auto -mb-6">
+    <div className=" bg-white px-6 py-10 md:py-20 lg:px-8 max-w-7xl mx-auto -mb-6">
       <div className="flex lg:flex-row flex-col items-start gap-12">
         {/* title block left than center*/}
         <div className="mx-auto max-w-2xl ">
@@ -195,8 +195,8 @@ export default function Contact() {
               </span>
             </h2>
             <p className="mt-7 text-lg/8 text-gray-600 text-balance">
-              Розкажіть про ваш проєкт — ми швидко оцінимо доцільність рішення та
-              підкажемо оптимальну конфігурацію.
+              Розкажіть про ваш проєкт — ми швидко оцінимо доцільність рішення
+              та підкажемо оптимальну конфігурацію.
             </p>
           </div>
           <div className="bg-[#eceffa] p-8 max-w-80 lg:mt-40 lg:block hidden">
@@ -211,7 +211,7 @@ export default function Contact() {
                     className=" hover:text-[#2c5cf2] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2c5cf2]"
                     aria-label="Написати на email info@iprok.com.ua"
                   >
-                    info@iprok.com.ua
+                    iprok.ua2026@gmail.com
                   </a>
                 </dd>
               </div>
@@ -266,7 +266,10 @@ export default function Contact() {
                   className="block w-full  bg-white px-3.5 py-2 text-base text-gray-900 outline  -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:-outline-offset-2 focus:outline-[#2c5cf2]"
                 />
                 {touched.firstName && errors.firstName && (
-                  <p id="first-name-error" className="mt-1 text-sm text-red-600">
+                  <p
+                    id="first-name-error"
+                    className="mt-1 text-sm text-red-600"
+                  >
                     {errors.firstName}
                   </p>
                 )}

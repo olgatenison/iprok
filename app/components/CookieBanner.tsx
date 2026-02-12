@@ -1,38 +1,72 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useEffect, useSyncExternalStore } from "react";
 
 const STORAGE_KEY = "cookie_consent"; // "accepted" | "rejected"
+const EVENT_NAME = "cookie-consent-changed";
+
+function subscribe(callback: () => void) {
+  // storage — срабатывает между вкладками
+  const onStorage = () => callback();
+  const onCustom = () => callback();
+
+  window.addEventListener("storage", onStorage);
+  window.addEventListener(EVENT_NAME, onCustom);
+
+  return () => {
+    window.removeEventListener("storage", onStorage);
+    window.removeEventListener(EVENT_NAME, onCustom);
+  };
+}
+
+function getSnapshot() {
+  try {
+    return localStorage.getItem(STORAGE_KEY); // string | null
+  } catch {
+    return null;
+  }
+}
+
+function getServerSnapshot() {
+  // На сервере localStorage нет — возвращаем null.
+  return null;
+}
 
 export default function CookieBanner() {
-  const [visible, setVisible] = useState(false);
+  const consent = useSyncExternalStore(
+    subscribe,
+    getSnapshot,
+    getServerSnapshot,
+  );
+  const visible = !consent; // если нет выбора — показываем
 
+  // ✅ Чтобы баннер не перекрывал контент снизу (без setState)
   useEffect(() => {
-    // показываем баннер только если ещё нет решения
-    const consent =
-      typeof window !== "undefined" ? localStorage.getItem(STORAGE_KEY) : null;
+    if (!visible) return;
 
-    if (!consent) setVisible(true);
-  }, []);
+    document.body.classList.add("pb-[110px]", "sm:pb-[90px]");
+    return () => {
+      document.body.classList.remove("pb-[110px]", "sm:pb-[90px]");
+    };
+  }, [visible]);
 
-  const acceptAll = () => {
-    localStorage.setItem(STORAGE_KEY, "accepted");
-    setVisible(false);
-    // сюда можно добавить включение аналитики/пикселей, если нужно
-  };
-
-  const rejectAll = () => {
-    localStorage.setItem(STORAGE_KEY, "rejected");
-    setVisible(false);
-    // сюда можно добавить отключение/неинициализацию аналитики
+  const setConsent = (value: "accepted" | "rejected") => {
+    localStorage.setItem(STORAGE_KEY, value);
+    // В этой же вкладке storage event не сработает — дергаем свой
+    window.dispatchEvent(new Event(EVENT_NAME));
   };
 
   if (!visible) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-gray-900/10 bg-white shadow-lg  ">
-      <div className="max-w-7xl flex flex-col justify-between gap-x-8 gap-y-4  mx-auto md:flex-row md:items-center lg:px-8 p-6 ">
+    <div
+      className="fixed inset-x-0 bottom-0 z-50 border-t border-gray-900/10 bg-white shadow-lg"
+      role="dialog"
+      aria-live="polite"
+      aria-label="Повідомлення про cookie"
+    >
+      <div className="mx-auto flex max-w-7xl flex-col justify-between gap-x-8 gap-y-4 p-6 md:flex-row md:items-center lg:px-8">
         <p className="max-w-4xl text-sm/6 text-gray-900">
           Ми використовуємо файли cookie, щоб забезпечити коректну роботу сайту
           та покращити ваш користувацький досвід. Ви можете прийняти або
@@ -49,16 +83,18 @@ export default function CookieBanner() {
         <div className="flex flex-none items-center gap-x-5">
           <button
             type="button"
-            onClick={acceptAll}
-            className="rounded-md bg-[#2c5cf2] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2c5cf2]"
+            onClick={() => setConsent("accepted")}
+            className=" bg-[#2c5cf2] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:opacity-90
+                       focus-visible:ring-2 focus-visible:ring-[#2c5cf2] focus-visible:ring-offset-2"
           >
             Прийняти
           </button>
 
           <button
             type="button"
-            onClick={rejectAll}
-            className="text-sm/6 font-semibold text-gray-900 hover:text-gray-700"
+            onClick={() => setConsent("rejected")}
+            className="text-sm/6 font-semibold text-gray-900 hover:text-gray-700
+                       focus-visible:ring-2 focus-visible:ring-[#2c5cf2] focus-visible:ring-offset-2 rounded"
           >
             Відхилити
           </button>

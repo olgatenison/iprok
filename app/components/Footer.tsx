@@ -8,7 +8,7 @@ export default function Footer() {
       </h2>
 
       <div className="mx-auto max-w-7xl px-6 py-10 lg:px-8">
-        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between justify-center md:text-left text-center">
           {/* Privacy policy (internal) */}
           <Link
             href="/privacy-policy"
