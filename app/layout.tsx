@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/Footer";
@@ -14,31 +14,37 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const SITE_URL = "https://iprok.vercel.app"; // лучше потом заменить на свой домен
-const SITE_NAME = "iProk";
-const DEFAULT_TITLE = "iProk — інженерна система будівництва";
-const DEFAULT_DESCRIPTION =
-  "iProk — інженерна екосистема: каркас, утеплення та обшивка працюють як єдиний моноліт. Заводська точність, швидкий монтаж і прогнозований результат.";
+const SITE_URL = "https://iprok.vercel.app";
+const BRAND = "iProk";
 
 export const metadata: Metadata = {
-  // Базовое
   metadataBase: new URL(SITE_URL),
+
   title: {
-    default: DEFAULT_TITLE,
-    template: `%s — ${SITE_NAME}`,
+    default: `${BRAND} — інженерна система збірного будівництва`,
+    template: `%s | ${BRAND}`,
   },
-  description: DEFAULT_DESCRIPTION,
+
+  description:
+    "iProk — інженерна система збірного будівництва: виробництво в цеху, мінімум робіт на об’єкті, прогнозовані строки та стабільна якість.",
+
+  applicationName: BRAND,
+  category: "construction",
+  generator: "Next.js",
 
   keywords: [
     "iProk",
+    "збірне будівництво",
     "інженерна система",
-    "будівництво",
     "каркас",
+    "модульні стіни",
     "енергоефективність",
-    "заводське виробництво",
-    "модульне будівництво",
     "швидкий монтаж",
   ],
+
+  authors: [{ name: BRAND }],
+  creator: BRAND,
+  publisher: BRAND,
 
   alternates: {
     canonical: "/",
@@ -47,72 +53,64 @@ export const metadata: Metadata = {
     },
   },
 
-  // Роботы
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: BRAND,
+    locale: "uk_UA",
+    title: `${BRAND} — інженерна система збірного будівництва`,
+    description:
+      "Каркас, утеплення та обшивка працюють як єдиний моноліт. Більшість критичних процесів — у контрольованих умовах виробництва.",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: `${BRAND} — інженерна система`,
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: `${BRAND} — інженерна система збірного будівництва`,
+    description:
+      "Модульне виробництво, швидкий монтаж, контроль якості та прогнозований результат.",
+    images: ["/og.jpg"],
+  },
+
   robots: {
     index: true,
     follow: true,
     googleBot: {
       index: true,
       follow: true,
-      "max-snippet": -1,
       "max-image-preview": "large",
+      "max-snippet": -1,
       "max-video-preview": -1,
     },
   },
 
-  openGraph: {
-    type: "website",
-    url: SITE_URL,
-    title: DEFAULT_TITLE,
-    description: DEFAULT_DESCRIPTION,
-    siteName: SITE_NAME,
-    locale: "uk_UA",
-    images: [
-      {
-        url: "/og.jpg", // ✅ положи public/og.jpg (1200x630)
-        width: 1200,
-        height: 630,
-        alt: "iProk — інженерна система будівництва",
-      },
-    ],
-  },
-
-  // Twitter cards
-  twitter: {
-    card: "summary_large_image",
-    title: DEFAULT_TITLE,
-    description: DEFAULT_DESCRIPTION,
-    images: ["/og.jpg"],
-    // если есть твиттер аккаунт — раскомментируй:
-    // site: "@iprok",
-    // creator: "@iprok",
-  },
-
-  // Иконки/манифест
   icons: {
-    icon: [{ url: "/favicon.ico" }],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180" }],
   },
-  manifest: "/site.webmanifest",
 
-  applicationName: SITE_NAME,
-  authors: [{ name: SITE_NAME, url: SITE_URL }],
-  category: "construction",
-  creator: SITE_NAME,
-  publisher: SITE_NAME,
+  manifest: "/site.webmanifest",
 };
 
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  themeColor: "#ffffff",
+export const viewport = {
+  themeColor: "#2c5cf2",
+  colorScheme: "light",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="uk" className="scroll-smooth bg-white">
       <body
