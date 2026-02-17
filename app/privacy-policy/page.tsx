@@ -26,15 +26,14 @@ export default function PrivacyPolicy() {
             Цю Політику складено відповідно до статті 8 Закону України «Про
             захист персональних даних» і вона визначає порядок обробки
             персональних даних та заходи із забезпечення їх безпеки, які
-            застосовує <b>[назва компанії / ПІБ ФОП]</b>.
+            застосовує <b>iProk</b>.
           </p>
 
           <p className="mt-4">
             Політика застосовується до всієї інформації, яку ми можемо отримати
-            про відвідувачів вебсайту <b>[посилання на сайт]</b> (далі —
-            «Вебсайт»). Ми виступаємо володільцем (контролером) персональних
-            даних і забезпечуємо їхню обробку відповідно до чинного
-            законодавства.
+            про відвідувачів вебсайту <b>iprok.com.ua</b> (далі — «Вебсайт»). Ми
+            виступаємо володільцем (контролером) персональних даних і
+            забезпечуємо їхню обробку відповідно до чинного законодавства.
           </p>
 
           {/* 1 */}
@@ -255,7 +254,7 @@ export default function PrivacyPolicy() {
             <blockquote className="font-semibold text-gray-900">
               <p>
                 Для реалізації прав звертайтеся:{" "}
-                <span className="font-bold">[email]</span>.
+                <span className="font-bold">iprok.ua2026@gmail.com</span>.
               </p>
             </blockquote>
           </figure>
@@ -266,14 +265,14 @@ export default function PrivacyPolicy() {
           </h2>
           <div className="mt-4 space-y-2 text-gray-600">
             <p>
-              Організація:{" "}
-              <b className="text-gray-900">[назва компанії / ФОП]</b>
+              Організація: <b className="text-gray-900">iProk</b>
             </p>
             <p>
-              Електронна пошта: <b className="text-gray-900">[email]</b>
+              Електронна пошта:{" "}
+              <b className="text-gray-900"> iprok.ua2026@gmail.com</b>
             </p>
             <p>
-              Вебсайт: <b className="text-gray-900">[посилання]</b>
+              Вебсайт: <b className="text-gray-900">iprok.com.ua</b>
             </p>
           </div>
 
@@ -284,8 +283,8 @@ export default function PrivacyPolicy() {
           <p className="mt-4 text-gray-600">
             Ми можемо періодично оновлювати цю Політику. Нова редакція набирає
             чинності з моменту публікації на сторінці:{" "}
-            <b className="text-gray-900">[посилання на сторінку політики]</b>.
-            Чинна версія доступна за вказаною адресою постійно.
+            <b className="text-gray-900">iprok.com.ua/privacy-policy</b>. Чинна
+            версія доступна за вказаною адресою постійно.
           </p>
 
           <p className="mt-8 text-sm text-gray-500">

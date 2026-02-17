@@ -220,14 +220,27 @@ export default function Contact() {
                 <dt className="sr-only">Номер телефону</dt>
                 <dd>
                   <a
-                    href="tel:+380000000000"
+                    href="tel:+380968129544"
                     className=" hover:text-[#2c5cf2] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2c5cf2]"
-                    aria-label="Зателефонувати за номером +380 00 000 0000"
+                    aria-label="Зателефонувати за номером +38 096 812 9544"
                   >
-                    +380 00 000 0000
+                    +38 096 812 9544
                   </a>
                 </dd>
               </div>
+
+              <dt className="sr-only">Адреса</dt>
+              <dd className="mt-1">
+                <a
+                  href="https://share.google/8ckQHRXBQKygCVxw3"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-[#2c5cf2] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2c5cf2]"
+                  aria-label="Відкрити адресу на мапі: м. Біла Церква, вул. Шептицького, 49"
+                >
+                  м. Біла Церква, <br /> вул. Шептицького, 49
+                </a>
+              </dd>
             </dl>
           </div>
         </div>
