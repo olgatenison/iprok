@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const SITE_URL = "https://iprok.vercel.app";
+const SITE_URL = "https://iprok.com.ua";
 const BRAND = "iProk";
 
 export const metadata: Metadata = {
