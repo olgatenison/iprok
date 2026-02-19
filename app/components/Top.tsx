@@ -4,7 +4,7 @@ export default function Top() {
   return (
     <div className="  pt-8 pb-12 ">
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="text-center text-base/7 font-semibold text-[#2c5cf2]">
+        <h2 className="text-center text-sm md:text-base/7 font-semibold text-[#2c5cf2]">
           Швидкість{" "}
           <span className="mx-2 inline-block text-[1.3em] leading-none align-middle">
             &middot;

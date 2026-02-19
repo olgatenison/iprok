@@ -17,6 +17,74 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 // тільки літери: укр + лат (без пробілів/дефісів/цифр)
 const NAME_RE = /^[A-Za-zА-Яа-яІіЇїЄєҐґ]+$/;
 
+// ✅ Єдине джерело правди для контактів (щоб всюди було однаково)
+const CONTACT_EMAIL = "info@iprok.com.ua";
+const CONTACT_PHONE_TEL = "+380968129544";
+const CONTACT_PHONE_DISPLAY = "+38 096 812 9544";
+const CONTACT_MAP_URL = "https://share.google/8ckQHRXBQKygCVxw3";
+const CONTACT_ADDRESS_TEXT = "м. Біла Церква, вул. Шептицького, 49";
+
+function ContactsBlock({
+  className = "",
+  compact = false,
+}: {
+  className?: string;
+  compact?: boolean;
+}) {
+  return (
+    <div className={`bg-[#eceffa] p-8 ${className}`}>
+      <h3 className="text-lg font-semibold text-gray-900">Контакти:</h3>
+
+      <dl
+        className={`mt-3 space-y-3 ${
+          compact ? "text-lg" : "text-lg"
+        } text-gray-900`}
+      >
+        <div>
+          <dt className="sr-only">Email</dt>
+          <dd>
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="hover:text-[#2c5cf2] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2c5cf2]"
+              aria-label={`Написати на email ${CONTACT_EMAIL}`}
+            >
+              {CONTACT_EMAIL}
+            </a>
+          </dd>
+        </div>
+
+        <div>
+          <dt className="sr-only">Номер телефону</dt>
+          <dd>
+            <a
+              href={`tel:${CONTACT_PHONE_TEL}`}
+              className="hover:text-[#2c5cf2] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2c5cf2]"
+              aria-label={`Зателефонувати за номером ${CONTACT_PHONE_DISPLAY}`}
+            >
+              {CONTACT_PHONE_DISPLAY}
+            </a>
+          </dd>
+        </div>
+
+        <div>
+          <dt className="sr-only">Адреса</dt>
+          <dd className="mt-1">
+            <a
+              href={CONTACT_MAP_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-[#2c5cf2] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2c5cf2]"
+              aria-label={`Відкрити адресу на мапі: ${CONTACT_ADDRESS_TEXT}`}
+            >
+              м. Біла Церква, <br /> вул. Шептицького, 49
+            </a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  );
+}
+
 export default function Contact() {
   const [form, setForm] = useState<FormState>({
     firstName: "",
@@ -85,7 +153,7 @@ export default function Contact() {
     return e;
   };
 
-  // оставляем (можно удалить, но пусть будет)
+  // залишаємо (можна видалити, але нехай буде)
   useMemo(() => validate(form), [form]);
 
   const markTouched = (key: keyof FormState) =>
@@ -126,7 +194,7 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // показываем все ошибки при клике
+    // показуємо всі помилки при кліку
     setTouched({
       firstName: true,
       lastName: true,
@@ -182,16 +250,15 @@ export default function Contact() {
   };
 
   return (
-    <div className=" bg-white px-6 py-10 md:py-20 lg:px-8 max-w-7xl mx-auto -mb-6">
+    <div className="bg-white px-6 py-10 md:py-20 lg:px-8 max-w-7xl mx-auto -mb-6">
       <div className="flex lg:flex-row flex-col items-start gap-12">
-        {/* title block left than center*/}
-        <div className="mx-auto max-w-2xl ">
+        {/* title block */}
+        <div className="mx-auto max-w-2xl">
           <div className="lg:text-left text-center mx-auto">
             <h2 className="text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
               Реалізуйте ваш{" "}
               <span className="block font-bold tracking-tight text-[#2c5cf2]">
-                {" "}
-                проєкт з iProk{" "}
+                проєкт з iProk
               </span>
             </h2>
             <p className="mt-7 text-lg/8 text-gray-600 text-balance">
@@ -199,50 +266,9 @@ export default function Contact() {
               та підкажемо оптимальну конфігурацію.
             </p>
           </div>
-          <div className="bg-[#eceffa] p-8 max-w-80 lg:mt-40 lg:block hidden">
-            <h3 className="text-lg font-semibold text-gray-900">Контакти:</h3>
 
-            <dl className="mt-3 space-y-3 text-lg text-gray-900">
-              <div>
-                <dt className="sr-only">Email</dt>
-                <dd>
-                  <a
-                    href="mailto:info@iprok.com.ua"
-                    className=" hover:text-[#2c5cf2] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2c5cf2]"
-                    aria-label="Написати на email info@iprok.com.ua"
-                  >
-                    iprok.ua2026@gmail.com
-                  </a>
-                </dd>
-              </div>
-
-              <div>
-                <dt className="sr-only">Номер телефону</dt>
-                <dd>
-                  <a
-                    href="tel:+380968129544"
-                    className=" hover:text-[#2c5cf2] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2c5cf2]"
-                    aria-label="Зателефонувати за номером +38 096 812 9544"
-                  >
-                    +38 096 812 9544
-                  </a>
-                </dd>
-              </div>
-
-              <dt className="sr-only">Адреса</dt>
-              <dd className="mt-1">
-                <a
-                  href="https://share.google/8ckQHRXBQKygCVxw3"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-[#2c5cf2] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2c5cf2]"
-                  aria-label="Відкрити адресу на мапі: м. Біла Церква, вул. Шептицького, 49"
-                >
-                  м. Біла Церква, <br /> вул. Шептицького, 49
-                </a>
-              </dd>
-            </dl>
-          </div>
+          {/* contacts (desktop) */}
+          <ContactsBlock className="max-w-80 lg:mt-40 lg:block hidden" />
         </div>
 
         {/* form */}
@@ -276,7 +302,7 @@ export default function Contact() {
                       ? "first-name-error"
                       : undefined
                   }
-                  className="block w-full  bg-white px-3.5 py-2 text-base text-gray-900 outline  -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:-outline-offset-2 focus:outline-[#2c5cf2]"
+                  className="block w-full bg-white px-3.5 py-2 text-base text-gray-900 outline -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:-outline-offset-2 focus:outline-[#2c5cf2]"
                 />
                 {touched.firstName && errors.firstName && (
                   <p
@@ -311,7 +337,7 @@ export default function Contact() {
                       ? "last-name-error"
                       : undefined
                   }
-                  className="block w-full  bg-white px-3.5 py-2 text-base text-gray-900 outline -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline  focus:-outline-offset-2 focus:outline-[#2c5cf2]"
+                  className="block w-full bg-white px-3.5 py-2 text-base text-gray-900 outline -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:-outline-offset-2 focus:outline-[#2c5cf2]"
                 />
                 {touched.lastName && errors.lastName && (
                   <p id="last-name-error" className="mt-1 text-sm text-red-600">
@@ -341,7 +367,7 @@ export default function Contact() {
                   aria-describedby={
                     touched.email && errors.email ? "email-error" : undefined
                   }
-                  className="block w-full  bg-white px-3.5 py-2 text-base text-gray-900 outline  -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline  focus:-outline-offset-2 focus:outline-[#2c5cf2]"
+                  className="block w-full bg-white px-3.5 py-2 text-base text-gray-900 outline -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:-outline-offset-2 focus:outline-[#2c5cf2]"
                 />
                 {touched.email && errors.email && (
                   <p id="email-error" className="mt-1 text-sm text-red-600">
@@ -359,13 +385,12 @@ export default function Contact() {
                 Номер телефону
               </label>
               <div className="mt-2.5">
-                <div className="flex  bg-white outline -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-[#2c5cf2]">
-                  <div className="grid shrink-0 grid-cols-1 focus-within:relative"></div>
+                <div className="flex bg-white outline -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-[#2c5cf2]">
                   <input
                     id="phone-number"
                     name="phone-number"
                     type="text"
-                    placeholder="+380 00 000 0000"
+                    placeholder={CONTACT_PHONE_DISPLAY}
                     value={form.phone}
                     onChange={onChangeText("phone")}
                     onBlur={onBlur("phone")}
@@ -405,7 +430,7 @@ export default function Contact() {
                       ? "message-error"
                       : undefined
                   }
-                  className="block w-full  bg-white px-3.5 py-2 text-base text-gray-900 outline  -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline  focus:-outline-offset-2 focus:outline-[#2c5cf2]"
+                  className="block w-full bg-white px-3.5 py-2 text-base text-gray-900 outline -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:-outline-offset-2 focus:outline-[#2c5cf2]"
                 />
                 {touched.message && errors.message && (
                   <p id="message-error" className="mt-1 text-sm text-red-600">
@@ -444,7 +469,7 @@ export default function Contact() {
                 >
                   Відправляючи цю форму, ви погоджуєтесь з нашою{" "}
                   <a
-                    href="#"
+                    href="/privacy-policy"
                     className="whitespace-nowrap font-semibold text-[#2c5cf2]"
                   >
                     політикою конфіденційності
@@ -463,7 +488,8 @@ export default function Contact() {
           <div className="mt-5">
             <button
               type="submit"
-              className="block w-full  bg-[#2c5cf2] px-4 py-3 text-center  font-semibold text-white shadow-sm hover:bg-[#2c5cf2] focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-[#2c5cf2] text-2xl tracking-tight "
+              className="block w-full bg-[#2c5cf2] px-4 py-3 text-center font-semibold text-white shadow-sm hover:bg-[#2c5cf2] focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-[#2c5cf2] text-2xl tracking-tight"
+              disabled={isSubmitting}
             >
               {isSubmitting ? "Відправляємо..." : "Отримати консультацію"}
             </button>
@@ -483,37 +509,7 @@ export default function Contact() {
         </form>
 
         {/* contacts block for mobile */}
-        <div className="bg-[#eceffa] p-8 md:w-xl w-full mx-auto block lg:hidden">
-          <h3 className="text-lg font-semibold text-gray-900">Контакти:</h3>
-
-          <dl className="mt-2 space-y-2 text-lg text-gray-900">
-            <div>
-              <dt className="sr-only">Email</dt>
-              <dd>
-                <a
-                  href="mailto:info@iprok.com.ua"
-                  className=" hover:text-[#2c5cf2] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2c5cf2]"
-                  aria-label="Написати на email info@iprok.com.ua"
-                >
-                  info@iprok.com.ua
-                </a>
-              </dd>
-            </div>
-
-            <div>
-              <dt className="sr-only">Номер телефону</dt>
-              <dd>
-                <a
-                  href="tel:+380000000000"
-                  className=" hover:text-[#2c5cf2] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2c5cf2]"
-                  aria-label="Зателефонувати за номером +380 00 000 0000"
-                >
-                  +380 00 000 0000
-                </a>
-              </dd>
-            </div>
-          </dl>
-        </div>
+        <ContactsBlock className="md:w-xl w-full mx-auto block lg:hidden" />
       </div>
     </div>
   );
