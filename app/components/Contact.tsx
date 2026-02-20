@@ -76,7 +76,7 @@ function ContactsBlock({
               className="hover:text-[#2c5cf2] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2c5cf2]"
               aria-label={`Відкрити адресу на мапі: ${CONTACT_ADDRESS_TEXT}`}
             >
-              м. Біла Церква, <br /> вул. Шептицького, 49
+              м. Біла Церква, <br /> вул. Шептицького, 43
             </a>
           </dd>
         </div>
