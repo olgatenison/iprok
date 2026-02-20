@@ -20,9 +20,9 @@ const NAME_RE = /^[A-Za-zА-Яа-яІіЇїЄєҐґ]+$/;
 // ✅ Єдине джерело правди для контактів (щоб всюди було однаково)
 const CONTACT_EMAIL = "info@iprok.com.ua";
 const CONTACT_PHONE_TEL = "+380968129544";
-const CONTACT_PHONE_DISPLAY = "+38 096 812 9544";
-const CONTACT_MAP_URL = "https://share.google/8ckQHRXBQKygCVxw3";
-const CONTACT_ADDRESS_TEXT = "м. Біла Церква, вул. Шептицького, 49";
+const CONTACT_PHONE_DISPLAY = "+38 0968129944";
+const CONTACT_MAP_URL = "https://share.google/6lVz7gYl9x3YflA9v";
+const CONTACT_ADDRESS_TEXT = "м. Біла Церква, вул. Шептицького, 43";
 
 function ContactsBlock({
   className = "",
