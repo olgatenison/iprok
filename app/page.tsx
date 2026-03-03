@@ -13,7 +13,7 @@ import HonestEngineering from "./components/HonestEngineering";
 import Philosophy from "./components/Philosophy";
 import FAQ from "./components/FAQ";
 import WhoItsFor from "./components/WhoItsFor";
-import Contact from "./components/ContactLazy";
+import Contact from "./components/Contact";
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null;
