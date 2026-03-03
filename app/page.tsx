@@ -13,12 +13,7 @@ import HonestEngineering from "./components/HonestEngineering";
 import Philosophy from "./components/Philosophy";
 import FAQ from "./components/FAQ";
 import WhoItsFor from "./components/WhoItsFor";
-
-import dynamic from "next/dynamic";
-const Contact = dynamic(() => import("./components/Contact"), {
-  ssr: false,
-  loading: () => null, // или маленький placeholder
-});
+import Contact from "./components/ContactLazy";
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null;
