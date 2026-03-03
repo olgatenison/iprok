@@ -1,3 +1,4 @@
+// app\components\CookieBanner.tsx
 "use client";
 
 import Link from "next/link";
@@ -48,7 +49,7 @@ export default function CookieBanner() {
 
   return (
     <>
-      <div aria-hidden="true" className="h-[110px] sm:h-[90px]" />
+      <div aria-hidden="true" className="h-27.5 sm:h-22.5" />
 
       <div
         className="fixed inset-x-0 bottom-0 z-50 border-t border-gray-900/10 bg-white shadow-lg"

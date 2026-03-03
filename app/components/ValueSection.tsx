@@ -1,3 +1,4 @@
+// app\components\ValueSection.tsx
 import type { SectionFields } from "../types/contentful";
 import type { Document } from "@contentful/rich-text-types";
 import { BLOCKS } from "@contentful/rich-text-types";
@@ -48,16 +49,19 @@ function normalizeString(s?: string) {
 function extractItemsFromRichText(doc?: Document): Item[] {
   if (!doc?.content?.length) return [];
 
-  const ul = doc.content.find((n) => (n as AnyNode)?.nodeType === BLOCKS.UL_LIST);
+  const ul = doc.content.find(
+    (n) => (n as AnyNode)?.nodeType === BLOCKS.UL_LIST,
+  );
   if (!ul || !hasContent(ul)) return [];
 
   const items: Item[] = [];
 
   for (const li of ul.content) {
-    if ((li as AnyNode)?.nodeType !== BLOCKS.LIST_ITEM || !hasContent(li)) continue;
+    if ((li as AnyNode)?.nodeType !== BLOCKS.LIST_ITEM || !hasContent(li))
+      continue;
 
     const paragraphs = (li as NodeWithContent).content.filter(
-      (n) => (n as AnyNode)?.nodeType === BLOCKS.PARAGRAPH
+      (n) => (n as AnyNode)?.nodeType === BLOCKS.PARAGRAPH,
     );
 
     const p0 = normalizeSpaces(plainText(paragraphs[0] ?? ""));
@@ -94,7 +98,6 @@ export default function ValueSection({
   title,
   title1,
   richText1,
-
 }: SectionFields) {
   const items = extractItemsFromRichText(richText1);
 
@@ -103,8 +106,6 @@ export default function ValueSection({
     "Ми вибудовали для вас систему, що забезпечує повну передбачуваність результату";
 
   const t1 = normalizeString(title1);
-
-
 
   return (
     <section id="advantages" className="bg-white pt-14 sm:pt-20">
@@ -125,13 +126,17 @@ export default function ValueSection({
                 <div>
                   <p className="text-xl font-semibold text-black">
                     {it.n ? (
-                      <span className="mr-2 font-bold text-[#2c5cf2]">{it.n}</span>
+                      <span className="mr-2 font-bold text-[#2c5cf2]">
+                        {it.n}
+                      </span>
                     ) : null}
                     {it.title}
                   </p>
 
                   {it.text ? (
-                    <p className="mt-2 text-base leading-7 text-gray-700">{it.text}</p>
+                    <p className="mt-2 text-base leading-7 text-gray-700">
+                      {it.text}
+                    </p>
                   ) : null}
                 </div>
               </div>

@@ -1,3 +1,4 @@
+// app\components\Top.tsx
 import Image from "next/image";
 import type { SectionFields } from "../types/contentful";
 

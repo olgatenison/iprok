@@ -1,3 +1,4 @@
+// app\components\Contact.tsx
 "use client";
 
 import React, { useMemo, useState } from "react";
@@ -283,7 +284,7 @@ export default function Contact({
         <div className="mx-auto max-w-2xl">
           {showTitleBlock ? (
             <div className="lg:text-left text-center mx-auto">
-              {(headingA || headingB) ? (
+              {headingA || headingB ? (
                 <h2 className="text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                   {headingA ? <>{headingA} </> : null}
                   {headingB ? (
@@ -345,7 +346,10 @@ export default function Contact({
                   className="block w-full bg-white px-3.5 py-2 text-base text-gray-900 outline -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:-outline-offset-2 focus:outline-[#2c5cf2]"
                 />
                 {touched.firstName && errors.firstName && (
-                  <p id="first-name-error" className="mt-1 text-sm text-red-600">
+                  <p
+                    id="first-name-error"
+                    className="mt-1 text-sm text-red-600"
+                  >
                     {errors.firstName}
                   </p>
                 )}
@@ -462,7 +466,9 @@ export default function Contact({
                   onBlur={onBlur("message")}
                   aria-invalid={Boolean(touched.message && errors.message)}
                   aria-describedby={
-                    touched.message && errors.message ? "message-error" : undefined
+                    touched.message && errors.message
+                      ? "message-error"
+                      : undefined
                   }
                   className="block w-full bg-white px-3.5 py-2 text-base text-gray-900 outline -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:-outline-offset-2 focus:outline-[#2c5cf2]"
                 />

@@ -1,3 +1,4 @@
+// app\components\FAQ.tsx
 import type {
   Block,
   Document,

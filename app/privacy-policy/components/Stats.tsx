@@ -22,9 +22,7 @@ type StatsProps = {
 function parseStatsFromRichText(doc?: Document): Stat[] {
   if (!doc) return [];
 
-  const ul = doc.content.find(
-    (n) => n.nodeType === BLOCKS.UL_LIST
-  );
+  const ul = doc.content.find((n) => n.nodeType === BLOCKS.UL_LIST);
 
   if (!ul || !("content" in ul)) return [];
 
@@ -50,11 +48,7 @@ function parseStatsFromRichText(doc?: Document): Stat[] {
   });
 }
 
-export default function Stats({
-  title,
-  richText,
-  richText1,
-}: StatsProps) {
+export default function Stats({ title, richText, richText1 }: StatsProps) {
   const stats = parseStatsFromRichText(richText1);
 
   return (
@@ -75,7 +69,7 @@ export default function Stats({
                 src="/img/office.webp"
                 fill
                 className="object-cover"
-                priority
+                sizes="(max-width: 1024px) 100vw, 1280px"
               />
             </div>
           </div>

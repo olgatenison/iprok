@@ -42,7 +42,6 @@ export default function Header() {
                 height={32}
                 src="/img/logo.webp"
                 className="h-8 w-auto"
-                priority
               />
             </a>
           </div>
@@ -94,7 +93,6 @@ export default function Header() {
                   height={32}
                   src="/img/logo.webp"
                   className="h-8 w-auto"
-                  priority
                 />
               </a>
 

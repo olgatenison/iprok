@@ -1,3 +1,4 @@
+// app\components\DNA.tsx
 import Image from "next/image";
 import type { ComponentType } from "react";
 import {

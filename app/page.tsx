@@ -13,7 +13,12 @@ import HonestEngineering from "./components/HonestEngineering";
 import Philosophy from "./components/Philosophy";
 import FAQ from "./components/FAQ";
 import WhoItsFor from "./components/WhoItsFor";
-import Contact from "./components/Contact";
+
+import dynamic from "next/dynamic";
+const Contact = dynamic(() => import("./components/Contact"), {
+  ssr: false,
+  loading: () => null, // или маленький placeholder
+});
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null;
@@ -34,21 +39,47 @@ export default async function Home() {
   if (!page) return null;
 
   const rawSections: unknown = page.fields.sections ?? [];
-  const sections = Array.isArray(rawSections) ? rawSections.filter(isSectionEntry) : [];
+  const sections = Array.isArray(rawSections)
+    ? rawSections.filter(isSectionEntry)
+    : [];
 
-  const hero = sections.find((s) => (s.fields.sectionName ?? "").trim().toLowerCase() === "hero");
-  const system = sections.find((s) => (s.fields.sectionName ?? "").trim().toLowerCase() === "system");
-  const stats = sections.find((s) => (s.fields.sectionName ?? "").trim().toLowerCase() === "stats");
-  const top = sections.find((s) => (s.fields.sectionName ?? "").trim().toLowerCase() === "top");
-  const dna = sections.find((s) => (s.fields.sectionName ?? "").trim().toLowerCase() === "dna");
-  const spheres = sections.find((s) => (s.fields.sectionName ?? "").trim().toLowerCase() === "spheres");
-  const faq = sections.find((s) => (s.fields.sectionName ?? "").trim().toLowerCase() === "faq");
-  const valueSection = sections.find(  (s) => (s.fields.sectionName ?? "").trim().toLowerCase() === "valuesection");
-    const honestEngineering = sections.find(  (s) => (s.fields.sectionName ?? "").trim().toLowerCase() === "honestengineering");
-const philosophy = sections.find(  (s) => (s.fields.sectionName ?? "").trim().toLowerCase() === "philosophy");
-const whoItsFor = sections.find(  (s) => (s.fields.sectionName ?? "").trim().toLowerCase() === "whoitsfor");
-const contact = sections.find(  (s) => (s.fields.sectionName ?? "").trim().toLowerCase() === "contact");
-
+  const hero = sections.find(
+    (s) => (s.fields.sectionName ?? "").trim().toLowerCase() === "hero",
+  );
+  const system = sections.find(
+    (s) => (s.fields.sectionName ?? "").trim().toLowerCase() === "system",
+  );
+  const stats = sections.find(
+    (s) => (s.fields.sectionName ?? "").trim().toLowerCase() === "stats",
+  );
+  const top = sections.find(
+    (s) => (s.fields.sectionName ?? "").trim().toLowerCase() === "top",
+  );
+  const dna = sections.find(
+    (s) => (s.fields.sectionName ?? "").trim().toLowerCase() === "dna",
+  );
+  const spheres = sections.find(
+    (s) => (s.fields.sectionName ?? "").trim().toLowerCase() === "spheres",
+  );
+  const faq = sections.find(
+    (s) => (s.fields.sectionName ?? "").trim().toLowerCase() === "faq",
+  );
+  const valueSection = sections.find(
+    (s) => (s.fields.sectionName ?? "").trim().toLowerCase() === "valuesection",
+  );
+  const honestEngineering = sections.find(
+    (s) =>
+      (s.fields.sectionName ?? "").trim().toLowerCase() === "honestengineering",
+  );
+  const philosophy = sections.find(
+    (s) => (s.fields.sectionName ?? "").trim().toLowerCase() === "philosophy",
+  );
+  const whoItsFor = sections.find(
+    (s) => (s.fields.sectionName ?? "").trim().toLowerCase() === "whoitsfor",
+  );
+  const contact = sections.find(
+    (s) => (s.fields.sectionName ?? "").trim().toLowerCase() === "contact",
+  );
 
   return (
     <div className="bg-white">
@@ -64,7 +95,6 @@ const contact = sections.find(  (s) => (s.fields.sectionName ?? "").trim().toLow
       {valueSection && <ValueSection {...valueSection.fields} />}
       {honestEngineering && <HonestEngineering {...honestEngineering.fields} />}
       {philosophy && <Philosophy {...philosophy.fields} />}
-
 
       {faq && <FAQ {...faq.fields} />}
 

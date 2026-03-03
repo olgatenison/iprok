@@ -1,3 +1,4 @@
+// app\components\Philosophy.tsx
 import type { SectionFields } from "../types/contentful";
 
 type PhilosophyProps = Pick<

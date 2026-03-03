@@ -1,3 +1,4 @@
+// app\components\Stats.tsx
 import Image from "next/image";
 import {
   BLOCKS,
@@ -22,9 +23,7 @@ type StatsProps = {
 function parseStatsFromRichText(doc?: Document): Stat[] {
   if (!doc) return [];
 
-  const ul = doc.content.find(
-    (n) => n.nodeType === BLOCKS.UL_LIST
-  );
+  const ul = doc.content.find((n) => n.nodeType === BLOCKS.UL_LIST);
 
   if (!ul || !("content" in ul)) return [];
 
@@ -50,11 +49,7 @@ function parseStatsFromRichText(doc?: Document): Stat[] {
   });
 }
 
-export default function Stats({
-  title,
-  richText,
-  richText1,
-}: StatsProps) {
+export default function Stats({ title, richText, richText1 }: StatsProps) {
   const stats = parseStatsFromRichText(richText1);
 
   return (

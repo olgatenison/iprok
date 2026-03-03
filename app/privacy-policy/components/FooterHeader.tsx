@@ -34,7 +34,6 @@ export default function FooterHeader() {
                 height={32}
                 src="/img/logo.webp"
                 className="h-8 w-auto"
-                priority
               />
             </Link>
           </div>
@@ -90,7 +89,6 @@ export default function FooterHeader() {
                   height={32}
                   src="/img/logo.jpg"
                   className="h-8 w-auto"
-                  priority
                 />
               </Link>
 

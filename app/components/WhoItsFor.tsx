@@ -1,3 +1,4 @@
+// app\components\WhoItsFor.tsx
 import Image from "next/image";
 import { CheckIcon } from "@heroicons/react/20/solid";
 import type { SectionFields } from "../types/contentful";
