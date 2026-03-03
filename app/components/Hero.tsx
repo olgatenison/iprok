@@ -17,10 +17,12 @@ export default function Hero({
   return (
     <div className="relative isolate overflow-hidden bg-black py-12 sm:py-20">
       <Image
-        alt=""
+        src="/img/hero2.webp"
+        alt="iProk engineering building system"
         width={1200}
         height={800}
-        src="/img/hero2.webp"
+        priority
+        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 60vw, 800px"
         className="absolute inset-0 -z-10 size-full object-cover lg:object-contain object-bottom"
       />
 
@@ -37,7 +39,7 @@ export default function Hero({
           </h1>
 
           {/* DESCRIPTION */}
-          <div className="mt-8 text-pretty text-lg font-base text-gray-500 lg:max-w-xl md:max-w-80 max-w-60">
+          <div className="mt-8 text-pretty text-lg font-base text-gray-400 lg:max-w-xl md:max-w-80 max-w-60">
             <div className="text-white block font-semibold ">{subtitle2}</div>
             {description}
           </div>

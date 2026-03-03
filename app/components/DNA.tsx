@@ -137,7 +137,8 @@ function CenterImage({ imageSrc }: { imageSrc: string }) {
           width={900}
           height={900}
           className="h-auto w-full object-contain"
-          sizes="(min-width: 1024px) 28vw, 80vw"
+          sizes="(max-width: 640px) 90vw, (max-width: 1024px) 80vw, 420px"
+          quality={70}
         />
       </div>
     </div>

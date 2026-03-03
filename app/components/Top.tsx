@@ -25,11 +25,12 @@ export default function Top({ subtitle1, title, title1 }: TopProps) {
 
         {/* Картинка */}
         <Image
-          alt=""
+          src="/img/three-2.webp"
+          alt="..."
           width={570}
           height={170}
-          src="/img/three-2.webp"
           className="mx-auto"
+          sizes="(max-width: 768px) 90vw, 570px"
         />
       </div>
     </section>

@@ -42,13 +42,16 @@ function normalizeString(s?: string) {
 function extractBulletsFromRichText(doc?: Document): string[] {
   if (!doc?.content?.length) return [];
 
-  const ul = doc.content.find((n) => (n as AnyNode)?.nodeType === BLOCKS.UL_LIST);
+  const ul = doc.content.find(
+    (n) => (n as AnyNode)?.nodeType === BLOCKS.UL_LIST,
+  );
   if (!ul || !hasContent(ul)) return [];
 
   const bullets: string[] = [];
 
   for (const li of ul.content) {
-    if ((li as AnyNode)?.nodeType !== BLOCKS.LIST_ITEM || !hasContent(li)) continue;
+    if ((li as AnyNode)?.nodeType !== BLOCKS.LIST_ITEM || !hasContent(li))
+      continue;
     const t = normalizeSpaces(plainText(li));
     if (t) bullets.push(t);
   }
@@ -56,7 +59,10 @@ function extractBulletsFromRichText(doc?: Document): string[] {
   return bullets;
 }
 
-type HonestEngineeringProps = Pick<SectionFields, "title" | "title1" | "subtitle1" | "richText"> & {
+type HonestEngineeringProps = Pick<
+  SectionFields,
+  "title" | "title1" | "subtitle1" | "richText"
+> & {
   imageSrc?: string;
   imageAlt?: string;
   factoryPct?: string;
@@ -66,9 +72,9 @@ type HonestEngineeringProps = Pick<SectionFields, "title" | "title1" | "subtitle
 export default function HonestEngineering({
   // Contentful
   title,
-  title1,     // используем как CTA line
-  subtitle1,  // абзац
-  richText,   // UL со steps
+  title1, // используем как CTA line
+  subtitle1, // абзац
+  richText, // UL со steps
 
   // optional
   imageSrc = "/img/progress_bars_90pct_2c5cf2_2x.webp",
@@ -78,7 +84,9 @@ export default function HonestEngineering({
 }: HonestEngineeringProps) {
   const steps = extractBulletsFromRichText(richText);
 
-  const h = normalizeString(title) || "Більша частина робіт — у контрольованому середовищі на заводі";
+  const h =
+    normalizeString(title) ||
+    "Більша частина робіт — у контрольованому середовищі на заводі";
   const body = normalizeString(subtitle1);
   const cta = normalizeString(title1);
 
@@ -124,21 +132,29 @@ export default function HonestEngineering({
                   width={592}
                   height={142}
                   className="w-full h-auto"
+                  sizes="(max-width: 768px) 100vw, 592px"
                 />
               </div>
 
               <div className="mt-3 flex items-center justify-center gap-2">
-                <span className="text-base font-bold text-[#2c5cf2]">На заводі</span>
-                <span className="text-lg font-bold text-[#2c5cf2]">{factoryPct}</span>
+                <span className="text-base font-bold text-[#2c5cf2]">
+                  На заводі
+                </span>
+                <span className="text-lg font-bold text-[#2c5cf2]">
+                  {factoryPct}
+                </span>
               </div>
 
               <div className="mt-1 flex items-center justify-center gap-2">
                 <span className="text-sm text-gray-600">На ділянці</span>
-                <span className="text-sm font-semibold text-gray-800">{sitePct}</span>
+                <span className="text-sm font-semibold text-gray-800">
+                  {sitePct}
+                </span>
               </div>
 
               <p className="mt-4 text-sm text-gray-600 text-center">
-                Менше техніки, менше «людського фактору», більше прогнозованості.
+                Менше техніки, менше «людського фактору», більше
+                прогнозованості.
               </p>
             </div>
           </div>

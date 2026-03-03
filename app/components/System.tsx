@@ -24,7 +24,12 @@ type Feature = { name: string; description: string; icon: string };
 
 type SystemProps = Pick<
   SectionFields,
-  "title" | "title1" | "subtitle1" | "subtitle2" | "description" | "description2"
+  | "title"
+  | "title1"
+  | "subtitle1"
+  | "subtitle2"
+  | "description"
+  | "description2"
 > & {
   richText?: Document; // правая колонка
   richText1?: Document; // список утепления (bullets)
@@ -42,7 +47,9 @@ const FEATURE_ICONS = [
 
 const richTextOptions: Options = {
   renderMark: {
-    [MARKS.BOLD]: (text) => <b className="font-semibold text-slate-800">{text}</b>,
+    [MARKS.BOLD]: (text) => (
+      <b className="font-semibold text-slate-800">{text}</b>
+    ),
   },
   renderNode: {
     [BLOCKS.PARAGRAPH]: (_node, children) => (
@@ -119,11 +126,10 @@ export default function System({
   subtitle1,
   subtitle2,
   description,
-    description2,
+  description2,
   richText,
   richText1,
   imageSrc = "/img/w.webp",
-
 }: SystemProps) {
   const features = parseFeaturesFromRichText(richText1);
 
@@ -155,6 +161,8 @@ export default function System({
                   alt="Екологічно безпечні матеріали"
                   width={64}
                   height={64}
+                  sizes="64px"
+                  quality={70}
                 />
                 <p className="font-semibold text-[#003fdd] whitespace-pre-line">
                   {description}
@@ -190,7 +198,7 @@ export default function System({
           {/* RIGHT: list */}
           <div className="mx-auto w-full max-w-4xl lg:mx-0">
             <p className="mb-6 text-center text-3xl font-semibold tracking-tight text-[#2c5cf2] lg:text-left">
-              {  description2}
+              {description2}
             </p>
 
             <dl className="w-full space-y-5">

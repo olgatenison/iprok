@@ -43,13 +43,16 @@ function normalizeString(s?: string) {
 function extractBullets(doc?: Document): string[] {
   if (!doc?.content?.length) return [];
 
-  const ul = doc.content.find((n) => (n as AnyNode)?.nodeType === BLOCKS.UL_LIST);
+  const ul = doc.content.find(
+    (n) => (n as AnyNode)?.nodeType === BLOCKS.UL_LIST,
+  );
   if (!ul || !hasContent(ul)) return [];
 
   const out: string[] = [];
 
   for (const li of ul.content) {
-    if ((li as AnyNode)?.nodeType !== BLOCKS.LIST_ITEM || !hasContent(li)) continue;
+    if ((li as AnyNode)?.nodeType !== BLOCKS.LIST_ITEM || !hasContent(li))
+      continue;
     const t = normalizeSpaces(plainText(li));
     if (t) out.push(t);
   }
@@ -59,7 +62,11 @@ function extractBullets(doc?: Document): string[] {
 
 type WhoItsForProps = Pick<SectionFields, "title" | "subtitle1" | "richText">;
 
-export default function WhoItsFor({ title, subtitle1, richText }: WhoItsForProps) {
+export default function WhoItsFor({
+  title,
+  subtitle1,
+  richText,
+}: WhoItsForProps) {
   const heading = normalizeString(title) || "Вам точно підійде iProk, якщо:";
 
   // если подпись не приходит — оставляем дефолт как было
@@ -85,7 +92,8 @@ export default function WhoItsFor({ title, subtitle1, richText }: WhoItsForProps
                 width={900}
                 height={900}
                 className="h-auto w-full object-contain"
-                priority
+                sizes="(max-width: 768px) 90vw, 600px"
+                quality={70}
               />
               <figcaption className="mt-4 text-lg leading-7 text-gray-200 font-light whitespace-pre-line">
                 {caption}

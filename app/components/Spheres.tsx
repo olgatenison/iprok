@@ -28,8 +28,7 @@ type SpheresProps = Pick<SectionFields, "title" | "subtitle1" | "btn"> & {
 const CARD_IMAGES = [
   {
     imageSrc: "/img/01.webp",
-    imageAlt:
-      "Змішане призначення: комерція на 1-му поверсі, житло/офіси вище",
+    imageAlt: "Змішане призначення: комерція на 1-му поверсі, житло/офіси вище",
   },
   {
     imageSrc: "/img/02.webp",
@@ -63,7 +62,7 @@ function listItemToTextLines(li: ListItem): string[] {
       p.content
         .filter(isText)
         .map((t) => t.value ?? "")
-        .join("")
+        .join(""),
     )
     .join("\n") // если параграфов несколько — разделим строкой
     .trim();
@@ -81,7 +80,7 @@ function cleanLeadingNumber(s: string): string {
 }
 
 function parseCardsFromRichText(
-  doc?: Document
+  doc?: Document,
 ): Array<{ name: string; details: string }> {
   if (!doc) return [];
 
@@ -148,7 +147,7 @@ export default function Spheres({
                 src={c.imageSrc}
                 alt={c.imageAlt}
                 fill
-                sizes="(min-width: 1024px) 28vw, (min-width: 640px) 33vw, 100vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 420px"
                 className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/0 via-black/30 to-black/70" />

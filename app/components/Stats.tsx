@@ -75,7 +75,7 @@ export default function Stats({
                 src="/img/office.webp"
                 fill
                 className="object-cover"
-                priority
+                sizes="100vw"
               />
             </div>
           </div>
