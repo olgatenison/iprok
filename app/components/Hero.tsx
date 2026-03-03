@@ -3,12 +3,7 @@ import type { SectionFields } from "../types/contentful";
 
 type HeroProps = Pick<
   SectionFields,
-  | "title"
-  | "subtitle1"
-  | "subtitle2"
-  | "description"
-  | "description2"
-  | "btn"
+  "title" | "subtitle1" | "subtitle2" | "description" | "description2" | "btn"
 >;
 
 export default function Hero({
@@ -16,7 +11,7 @@ export default function Hero({
   subtitle1,
   subtitle2,
   description,
-   description2,
+
   btn,
 }: HeroProps) {
   return (
@@ -32,9 +27,9 @@ export default function Hero({
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
           {/* SUBTITLE */}
-          <p className="md:mt-8 text-pretty text-xl font-base text-[#dfb88e] max-w-[26ch]">
-  {subtitle1}
-</p>
+          <p className="md:mt-8 text-pretty text-xl font-base text-[#dfb88e] max-w-50">
+            {subtitle1}
+          </p>
 
           {/* TITLE */}
           <h1 className="text-pretty text-8xl lg:text-[200px] font-bold tracking-tight text-blue-600">
@@ -42,10 +37,8 @@ export default function Hero({
           </h1>
 
           {/* DESCRIPTION */}
-          <div className="mt-8 text-pretty text-lg font-base text-gray-500 max-w-xl">
-            <div className="text-white block font-semibold ">
-              {subtitle2}
-            </div>
+          <div className="mt-8 text-pretty text-lg font-base text-gray-500 lg:max-w-xl md:max-w-80 max-w-60">
+            <div className="text-white block font-semibold ">{subtitle2}</div>
             {description}
           </div>
 
