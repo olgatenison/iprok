@@ -190,7 +190,8 @@ export default function System({
                 width={1200}
                 height={400}
                 className="h-auto w-full max-w-2xl object-contain"
-                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 600px"
+                quality={70}
               />
             </div>
           </div>

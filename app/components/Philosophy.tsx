@@ -1,6 +1,9 @@
 import type { SectionFields } from "../types/contentful";
 
-type PhilosophyProps = Pick<SectionFields, "title" | "title1" | "description" | "btn"> & {
+type PhilosophyProps = Pick<
+  SectionFields,
+  "title" | "title1" | "description" | "btn"
+> & {
   href?: string; // если хочешь переопределять ссылку (по умолчанию #contacts)
 };
 
@@ -16,7 +19,8 @@ export default function Philosophy({
   href = "#contacts",
 }: PhilosophyProps) {
   const eyebrow = normalizeString(title1) || "Філософія бренду";
-  const heading = normalizeString(title) || "Чесна інженерія без маркетингових ілюзій";
+  const heading =
+    normalizeString(title) || "Чесна інженерія без маркетингових ілюзій";
   const body = normalizeString(description) || "";
   const cta = normalizeString(btn) || "Отримати консультацію";
 
@@ -33,7 +37,7 @@ export default function Philosophy({
           </h2>
 
           {body ? (
-            <p className="mx-auto mt-6 max-w-xl text-pretty text-lg/8 text-indigo-200 whitespace-pre-line">
+            <p className="mx-auto mt-6 max-w-xl text-pretty text-lg/8 text-indigo-100 whitespace-pre-line">
               {body}
             </p>
           ) : null}
