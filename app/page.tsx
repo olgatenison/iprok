@@ -15,6 +15,8 @@ import FAQ from "./components/FAQ";
 import WhoItsFor from "./components/WhoItsFor";
 import Contact from "./components/Contact";
 
+export const revalidate = 240;
+
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null;
 }
